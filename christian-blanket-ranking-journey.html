@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reverse ASIN B0D8KGYBGB — Cấu trúc ranking &amp; hành trình launch</title>
+<style>
+  :root{
+    --ground:#FBFAF7;--card:#FFFFFF;--ink:#26242B;--muted:#6E6A73;--line:#E7E1D8;
+    --navy:#20283A;--navy-soft:#E7EAF0;
+    --plum:#7A4E63;--plum-soft:#F1E7EC;--plum-line:#DCC5D0;
+    --sage:#5E7355;--sage-soft:#E7EEE2;--sage-line:#CADBBF;
+    --gold:#A9772B;--gold-soft:#F5EAD3;--gold-line:#E4CF9E;
+    --red:#B23A2E;--red-soft:#F5DFDB;
+    --mono:"Consolas","SF Mono",ui-monospace,"Roboto Mono",monospace;
+    --serif:Cambria,Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,sans-serif;margin:0;padding:0 20px 72px;line-height:1.58;font-size:16px}
+  .wrap{max-width:1000px;margin:0 auto}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;margin:0;text-wrap:balance}
+  p{margin:0}
+  a{color:var(--plum)}
+  .mono{font-family:var(--mono)}
+
+  .plate{background:var(--navy);border-radius:14px;margin:34px 0 10px;padding:32px 34px 28px;color:#EEF0F5;position:relative;overflow:hidden}
+  .plate::after{content:"";position:absolute;right:-50px;top:-50px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(122,78,99,.42),transparent 68%);pointer-events:none}
+  .kick{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#C9A0B4}
+  .plate h1{font-size:clamp(25px,4.2vw,38px);line-height:1.08;margin:9px 0 12px;color:#FCFAF7}
+  .plate h1 span{color:#D7A9BD}
+  .plate p{color:#B7BCC8;max-width:66ch;font-size:15px}
+  .asin{display:inline-block;font-family:var(--mono);font-size:13px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:7px;padding:3px 10px;margin-top:14px;color:#EAD6DF}
+
+  .spec{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:14px 0 8px}
+  .spec div{background:var(--card);padding:15px 17px}
+  .spec dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .spec dd{margin:5px 0 0;font-family:var(--serif);font-size:22px;font-weight:600;color:var(--navy)}
+  .spec dd small{font-size:12px;color:var(--muted);font-weight:400;font-family:"Segoe UI",sans-serif}
+  @media(max-width:720px){.spec{grid-template-columns:repeat(2,1fr)}}
+  .src{font-size:12px;color:var(--muted);margin:12px 2px 0}
+
+  section{margin:46px 0 0}
+  .head{display:flex;align-items:baseline;gap:13px;border-bottom:2px solid var(--navy);padding-bottom:9px;margin-bottom:20px}
+  .head .no{font-family:var(--mono);font-size:13px;color:var(--plum);font-weight:700}
+  .head h2{font-size:25px}
+  .lead{max-width:78ch;color:#3C3A42;margin-bottom:18px}
+
+  /* ranking pyramid */
+  .pyramid{display:grid;gap:12px;margin:6px 0 4px}
+  .layer{border-radius:12px;padding:16px 20px;border:1px solid var(--line);background:var(--card);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+  .layer .lv{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;writing-mode:horizontal-tb;border-radius:8px;padding:8px 12px;text-align:center;min-width:96px}
+  .layer h4{font-size:18px;margin-bottom:3px}
+  .layer p{font-size:14px;color:#4A4750}
+  .layer.l1{border-left:6px solid var(--navy)}
+  .layer.l1 .lv{background:var(--navy-soft);color:var(--navy)}
+  .layer.l2{border-left:6px solid var(--sage)}
+  .layer.l2 .lv{background:var(--sage-soft);color:var(--sage)}
+  .layer.l3{border-left:6px solid var(--gold)}
+  .layer.l3 .lv{background:var(--gold-soft);color:var(--gold)}
+  .layer .kw{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  @media(max-width:600px){.layer{grid-template-columns:1fr}}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  @media(max-width:640px){.split{grid-template-columns:1fr}}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:16px 18px}
+  .box h4{font-size:15px;margin-bottom:8px}
+  .box ul{margin:0;padding-left:19px;font-size:14px;color:#3E3C45}
+  .box li{margin:5px 0}
+  .box.warn{background:var(--red-soft);border-color:#E7C4BE}
+  .box.warn h4{color:var(--red)}
+  .box.good{background:var(--sage-soft);border-color:var(--sage-line)}
+  .box.good h4{color:var(--sage)}
+  .box.plum{background:var(--plum-soft);border-color:var(--plum-line)}
+  .box.plum h4{color:var(--plum)}
+
+  /* split organic/ads donut-ish */
+  .obar{height:34px;border-radius:8px;overflow:hidden;display:flex;font-family:var(--mono);font-size:12px;font-weight:700;color:#fff;margin:10px 0 4px}
+  .obar .o{background:var(--sage);display:flex;align-items:center;justify-content:center}
+  .obar .a{background:var(--plum);display:flex;align-items:center;justify-content:center}
+
+  .tw{overflow-x:auto;border:1px solid var(--line);border-radius:11px;margin:8px 0}
+  table{border-collapse:collapse;width:100%;min-width:680px;font-size:14px;background:var(--card)}
+  th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--navy);color:#EBEEF3;font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:#FBFAF7}
+  .vol{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+  .pill{font-family:var(--mono);font-size:10.5px;padding:2px 8px;border-radius:99px;white-space:nowrap;font-weight:600}
+  .pill.p1{background:var(--sage-soft);color:var(--sage)}
+  .pill.p2{background:var(--gold-soft);color:var(--gold)}
+  .pill.p3{background:var(--navy-soft);color:var(--navy)}
+
+  /* journey chart */
+  .chart{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 18px 14px}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .legend i{width:13px;height:13px;border-radius:3px;display:inline-block}
+  .i-plum{background:var(--plum)}.i-gold{background:var(--gold)}.i-sage{background:var(--sage)}
+  .bars{display:grid;grid-template-columns:repeat(22,1fr);gap:3px;align-items:end;height:180px;border-bottom:2px solid var(--line);padding-bottom:0}
+  .bars .col{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+  .bars .pct{font-family:var(--mono);font-size:8.5px;color:var(--muted);margin-bottom:2px}
+  .bars .bar{width:100%;border-radius:3px 3px 0 0}
+  .bar.plum{background:var(--plum)}.bar.gold{background:var(--gold)}.bar.sage{background:var(--sage)}
+  .xax{display:grid;grid-template-columns:repeat(22,1fr);gap:3px;font-family:var(--mono);font-size:7.5px;color:var(--muted);text-align:center;margin-top:5px}
+  .xax span{transform:rotate(-90deg);white-space:nowrap;transform-origin:center;height:34px;display:flex;align-items:center;justify-content:center}
+  @media(max-width:680px){.chart{overflow-x:auto}.bars,.xax{min-width:560px}}
+
+  /* phases */
+  .phases{overflow-x:auto;border:1px solid var(--line);border-radius:11px;margin-top:18px}
+  .phasegrid{display:grid;grid-template-columns:110px 1fr 1fr 96px;min-width:640px;font-size:14px}
+  .phasegrid>div{padding:11px 14px;border-bottom:1px solid var(--line)}
+  .phasegrid .ph{font-family:var(--serif);font-weight:600}
+  .phasegrid .hd{background:var(--navy);color:#EBEEF3;font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+  .phasegrid .ads{font-family:var(--mono);font-weight:700}
+
+  /* seasonality */
+  .cal{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 18px 12px;margin-top:6px}
+  .scal{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;align-items:end;height:110px;margin:10px 0 4px}
+  .scal .b{border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--gold),#CBA45C)}
+  .scal .b.peak{background:linear-gradient(180deg,var(--plum),#96667C)}
+  .months{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;font-family:var(--mono);font-size:10px;color:var(--muted);text-align:center}
+
+  /* timeline */
+  .rail{list-style:none;margin:0;padding:0;border-left:3px solid var(--gold-line)}
+  .rail li{position:relative;padding:0 0 18px 24px}
+  .rail li::before{content:"";position:absolute;left:-9px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--card);border:3px solid var(--gold)}
+  .rail li.peak::before{background:var(--plum);border-color:var(--plum)}
+  .rail .when{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+  .rail .what{font-weight:600;font-family:var(--serif)}
+  .rail .why{color:var(--muted);font-size:14px}
+
+  .note{background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:9px;padding:13px 17px;font-size:14px;color:#5E4410;margin-top:16px}
+  .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0}
+  @media(max-width:600px){.kpi{grid-template-columns:1fr}}
+  .kpi div{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:15px 17px;text-align:center}
+  .kpi .big{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--plum)}
+  .kpi .lb{font-size:12.5px;color:var(--muted);margin-top:3px}
+  .foot{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+  .backlink{display:inline-block;margin:26px 0 0;font-family:var(--mono);font-size:12.5px;color:var(--plum);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="plate">
+    <div class="kick">UOYmedia · Amazon Reverse ASIN</div>
+    <h1>Christian Blanket — Giải phẫu <span>cấu trúc ranking</span> &amp; hành trình launch</h1>
+    <p>Bóc tách một listing "gift blanket" thắng bằng organic: nó xếp hạng theo kiến trúc nào, đã đi từ ngày launch đến vị trí hiện tại ra sao, và nếu vào cạnh tranh thì cần bao lâu.</p>
+    <span class="asin">ASIN: B0D8KGYBGB · Afterprints · Seller RWGT LLC</span>
+  </div>
+
+  <dl class="spec">
+    <div><dt>Giá / BSR</dt><dd>$19.99 <small>· BSR 14,044 (H&amp;K)</small></dd></div>
+    <div><dt>Rating</dt><dd>4.8★ <small>· 838 review</small></dd></div>
+    <div><dt>Tuổi listing</dt><dd>~22 th <small>· launch 03/09/2024</small></dd></div>
+    <div><dt>Keyword phủ</dt><dd>1,656 <small>· Organic 94.6%</small></dd></div>
+  </dl>
+  <p class="src">⚠️ Số search / traffic share / footprint là <b>ước tính SellerSprite</b> (Amazon US, 07/2026) — dùng so sánh tương đối, không phải doanh thu niêm yết. 838 review / ~22 tháng ≈ <b>~38 review/tháng</b> (tốc độ vừa, bền).</p>
+
+  <!-- 01 RANKING STRUCTURE -->
+  <section>
+    <div class="head"><span class="no">01</span><h2>Cấu trúc ranking của họ — kiến trúc 3 tầng</h2></div>
+    <p class="lead">Điểm cốt lõi cần hiểu: listing này <b>không cố rank #1 ở từ khóa to nhất</b>. Nó xây một kim tự tháp keyword — <b>sở hữu organic ở tầng ngách</b>, rồi <b>mượn impression khổng lồ</b> từ term đại chúng nhờ độ liên quan + badge Amazon's Choice. Traffic gần như thuần organic:</p>
+
+    <div class="obar">
+      <div class="o" style="flex-basis:94.63%">Organic 94.63%</div>
+      <div class="a" style="flex-basis:5.37%">Ads 5%*</div>
+    </div>
+    <p class="src" style="margin-top:2px">*Tỉ trọng paid trên các term chính chỉ 0–5% hiện tại (tổng footprint paid 11.84%). Đây là listing <b>sống bằng organic</b>.</p>
+
+    <div class="pyramid" style="margin-top:18px">
+      <div class="layer l1">
+        <span class="lv">Tầng 1<br>Đại dương</span>
+        <div>
+          <h4>Term đại chúng — chỉ để hứng impression</h4>
+          <p>Rank <b>trang 2–3</b>, KHÔNG sở hữu, nhưng vẫn nhận lượng hiển thị lớn nhờ relevance + AC badge. Không đốt ads mạnh vào đây.</p>
+          <p class="kw">birthday gifts for women (651k · Org #61) · throw blanket (354k · Org #14) · gifts for women (278k · Org trang 3)</p>
+        </div>
+      </div>
+      <div class="layer l2">
+        <span class="lv">Tầng 2<br>Lõi sở hữu</span>
+        <div>
+          <h4>Cụm christian — vị trí organic vững nhất (trang 1)</h4>
+          <p>Đây là "nhà". Rank <b>trang 1</b>, chuyển đổi tốt, là nơi thương hiệu thật sự cạnh tranh và thắng.</p>
+          <p class="kw">christian gifts for women (75k · Org #11) · christian gifts (34k · Org #10)</p>
+        </div>
+      </div>
+      <div class="layer l3">
+        <span class="lv">Tầng 3<br>Long-tail</span>
+        <div>
+          <h4>Dịp × quan hệ — hàng trăm đuôi dài đem đơn đều</h4>
+          <p>Rank trang 1 rải rác, cạnh tranh thấp, cộng dồn thành phần lớn của 1,656 keyword.</p>
+          <p class="kw">baptism gifts for girl (61k · Org P1) · 40th birthday gifts women (88k) · christian gifts for mom/sister · religious gifts · regalos/mujer (tệp Tây Ban Nha)</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin:26px 0 10px;font-size:18px">Top keyword theo Impression Share</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Keyword</th><th>Search/th</th><th>Vị trí Organic</th><th>Ads</th><th>Tầng</th></tr></thead>
+        <tbody>
+          <tr><td>birthday gifts for women <span class="mono">(AC badge)</span></td><td class="vol">651,826</td><td>Trang 2 · #61</td><td>5.1%</td><td><span class="pill p3">Đại dương</span></td></tr>
+          <tr><td>throw blanket</td><td class="vol">353,904</td><td>Trang 2 · #14</td><td>0%</td><td><span class="pill p3">Đại dương</span></td></tr>
+          <tr><td>gifts for women</td><td class="vol">277,571</td><td>Trang 3 · #43</td><td>0.1%</td><td><span class="pill p3">Đại dương</span></td></tr>
+          <tr><td><b>christian gifts for women</b></td><td class="vol">75,032</td><td><b>Trang 1 · #11</b></td><td>5%</td><td><span class="pill p1">Lõi</span></td></tr>
+          <tr><td><b>christian gifts</b></td><td class="vol">34,136</td><td><b>Trang 1 · #10</b></td><td>1%</td><td><span class="pill p1">Lõi</span></td></tr>
+          <tr><td>baptism gifts for girl</td><td class="vol">61,133</td><td>Trang 1 · #61</td><td>0%</td><td><span class="pill p2">Long-tail</span></td></tr>
+          <tr><td>40th birthday gifts women</td><td class="vol">87,906</td><td>Trang 2 · #45</td><td>0%</td><td><span class="pill p2">Long-tail</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><b>Bài học cấu trúc:</b> họ chốt đơn &amp; conversion nhờ <b>tầng 2–3 (christian/occasion, trang 1)</b>; tầng 1 chỉ là "bonus impression". Muốn đấu lại, bạn phải copy đúng logic này — <b>đánh chiếm long-tail christian trước</b>, đừng phí tiền húc term to.</p>
+  </section>
+
+  <!-- 02 JOURNEY -->
+  <section>
+    <div class="head"><span class="no">02</span><h2>Hành trình launch → build ranking (22 tháng)</h2></div>
+    <p class="lead">Số keyword listing rank được theo từng tháng (chiều cao cột), tô màu theo mức phụ thuộc quảng cáo. Thấy rõ: <b>đốt ads mạnh 6 tháng đầu → organic tiếp quản → đỉnh mùa Q4</b>.</p>
+
+    <div class="chart">
+      <div class="legend">
+        <span><i class="i-plum"></i> Ads gánh ≥30% traffic (pha nhóm lửa)</span>
+        <span><i class="i-gold"></i> Ads 15–29% (chuyển giao)</span>
+        <span><i class="i-sage"></i> Ads &lt;15% (organic tự chạy)</span>
+      </div>
+      <div class="bars">
+        <div class="col"><span class="pct">15%</span><div class="bar gold" style="height:6px"></div></div>
+        <div class="col"><span class="pct">27%</span><div class="bar gold" style="height:9px"></div></div>
+        <div class="col"><span class="pct">15%</span><div class="bar gold" style="height:16px"></div></div>
+        <div class="col"><span class="pct">6%</span><div class="bar sage" style="height:19px"></div></div>
+        <div class="col"><span class="pct">49%</span><div class="bar plum" style="height:16px"></div></div>
+        <div class="col"><span class="pct">44%</span><div class="bar plum" style="height:26px"></div></div>
+        <div class="col"><span class="pct">40%</span><div class="bar plum" style="height:40px"></div></div>
+        <div class="col"><span class="pct">34%</span><div class="bar plum" style="height:49px"></div></div>
+        <div class="col"><span class="pct">30%</span><div class="bar plum" style="height:56px"></div></div>
+        <div class="col"><span class="pct">24%</span><div class="bar gold" style="height:58px"></div></div>
+        <div class="col"><span class="pct">15%</span><div class="bar gold" style="height:78px"></div></div>
+        <div class="col"><span class="pct">14%</span><div class="bar sage" style="height:96px"></div></div>
+        <div class="col"><span class="pct">18%</span><div class="bar gold" style="height:91px"></div></div>
+        <div class="col"><span class="pct">11%</span><div class="bar sage" style="height:98px"></div></div>
+        <div class="col"><span class="pct">3%</span><div class="bar sage" style="height:115px"></div></div>
+        <div class="col"><span class="pct">11%</span><div class="bar sage" style="height:165px"></div></div>
+        <div class="col"><span class="pct">10%</span><div class="bar sage" style="height:106px"></div></div>
+        <div class="col"><span class="pct">10%</span><div class="bar sage" style="height:82px"></div></div>
+        <div class="col"><span class="pct">12%</span><div class="bar sage" style="height:110px"></div></div>
+        <div class="col"><span class="pct">8%</span><div class="bar sage" style="height:130px"></div></div>
+        <div class="col"><span class="pct">14%</span><div class="bar sage" style="height:116px"></div></div>
+        <div class="col"><span class="pct">14%</span><div class="bar sage" style="height:101px"></div></div>
+      </div>
+      <div class="xax">
+        <span>09/24</span><span>10/24</span><span>11/24</span><span>12/24</span><span>01/25</span><span>02/25</span><span>03/25</span><span>04/25</span><span>05/25</span><span>06/25</span><span>07/25</span><span>08/25</span><span>09/25</span><span>10/25</span><span>11/25</span><span>12/25</span><span>01/26</span><span>02/26</span><span>03/26</span><span>04/26</span><span>05/26</span><span>06/26</span>
+      </div>
+    </div>
+
+    <div class="phases">
+      <div class="phasegrid">
+        <div class="hd">Pha</div><div class="hd">Thời gian</div><div class="hd">Điều xảy ra</div><div class="hd">% Ads</div>
+        <div class="ph">① Nhóm lửa</div><div>M0–3 · 09–12/2024</div><div>Index, gom review đầu, footprint ~30→180 kw</div><div class="ads">6–27%</div>
+        <div class="ph">② Đốt Ads</div><div>M4–6 · 01–03/2025</div><div>Bơm PPC ép rank sau lễ, footprint 150→400</div><div class="ads" style="color:var(--plum)">44–49%</div>
+        <div class="ph">③ Flywheel</div><div>M7–11 · 04–08/2025</div><div>Organic tiếp quản, footprint 500→1,000, rút ads</div><div class="ads">34→14%</div>
+        <div class="ph">④ Chín + Q4</div><div>M12–15 · 09–12/2025</div><div>Đỉnh 1,650 kw mùa Giáng Sinh, gần thuần organic</div><div class="ads" style="color:var(--sage)">3–18%</div>
+        <div class="ph">⑤ Ổn định</div><div>2026</div><div>Dao động 850–1,350 theo mùa, ads duy trì</div><div class="ads">8–14%</div>
+      </div>
+    </div>
+    <div class="kpi" style="margin-top:18px">
+      <div><div class="big">~6 th</div><div class="lb">Có traction (vào top vài term ngách)</div></div>
+      <div><div class="big">~9–12 th</div><div class="lb">Organic vững, ads về ~15% → bắt đầu lãi</div></div>
+      <div><div class="big">~12–15 th</div><div class="lb">Qua 1 mùa Q4 → vị trí cạnh tranh thật</div></div>
+    </div>
+    <p class="note"><b>Đọc đường cong:</b> ads là "mồi" chứ không phải "máu" — 6 tháng đầu ads gánh <b>40–49%</b> traffic (lỗ/mỏng biên là bình thường), organic chỉ compound <b>sau ~9 tháng</b>. Đỉnh footprint rơi đúng <b>Q4/2025</b> — mùa Giáng Sinh thứ 2 mới là lúc bứt phá.</p>
+  </section>
+
+  <!-- 03 SEASONALITY -->
+  <section>
+    <div class="head"><span class="no">03</span><h2>Mùa vụ — evergreen, đỉnh Q4</h2></div>
+    <p class="lead">Data footprint xác nhận: <b>đỉnh tháng 12 (Giáng Sinh)</b> + <b>bump tháng 4 (Easter/Mother's Day/graduation)</b>; nền <code>birthday</code> giữ bán quanh năm. Không phải hàng chết mùa như ornament.</p>
+    <div class="cal">
+      <div class="scal">
+        <div class="b" style="height:48%"></div><div class="b" style="height:42%"></div><div class="b" style="height:52%"></div>
+        <div class="b" style="height:70%"></div><div class="b" style="height:60%"></div><div class="b" style="height:58%"></div>
+        <div class="b" style="height:52%"></div><div class="b" style="height:56%"></div><div class="b" style="height:60%"></div>
+        <div class="b" style="height:66%"></div><div class="b" style="height:78%"></div><div class="b peak" style="height:96%"></div>
+      </div>
+      <div class="months"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span></div>
+      <p class="src" style="margin-top:8px">Đỉnh <b>T12</b> (quà Giáng Sinh + mùa lạnh) · bump <b>T4–5</b> (Easter, Mother's Day, graduation, baptism/confirmation) · nền birthday cả năm.</p>
+    </div>
+  </section>
+
+  <!-- 04 ENTRY PLAN -->
+  <section>
+    <div class="head"><span class="no">04</span><h2>Nếu team vào — làm gì &amp; bao lâu</h2></div>
+    <ul class="rail">
+      <li><div class="when">P0 · Trước launch</div><div class="what">5–8 SKU design (hoa + verse), kiến trúc keyword 3 tầng, 15–25 review mồi (Vine).</div><div class="why">Bắt chước đúng cấu trúc tầng 2–3, chuẩn bị index.</div></li>
+      <li><div class="when">P1 · M0–6</div><div class="what">PPC mạnh vào term NGÁCH (christian gifts for women/mom/sister, baptism/religious gifts) — KHÔNG húc "birthday gifts for women".</div><div class="why">Ads gánh 30–45%, biên mỏng/lỗ — cần runway tiền mặt.</div></li>
+      <li><div class="when">P2 · M6–12</div><div class="what">Leo trang 1 long-tail, mở rộng footprint, rút ads khi organic lên.</div><div class="why">Footprint ~1,000 kw, ads ↓ ~15%, bắt đầu có lãi.</div></li>
+      <li class="peak"><div class="when">P3 · M12–15 (canh vào Q4)</div><div class="what">Traffic lễ tăng tốc rank; duy trì ads ~10–15%.</div><div class="why">Vị trí phòng thủ, biên khỏe như incumbent (ads ~5%).</div></li>
+    </ul>
+
+    <div class="split">
+      <div class="box warn">
+        <h4>⚠️ Rủi ro &amp; điều phải chú ý</h4>
+        <ul>
+          <li><b>Runway 6 tháng đốt ads:</b> hết vốn tháng 3–4 = chết trước khi organic compound.</li>
+          <li><b>Moat của họ là "lãi kép 1 năm" organic</b> + 838 review + AC badge — không mua tắt được, phải trả bằng thời gian.</li>
+          <li><b>Blanket nặng/cồng kềnh → phí FBA cao</b> (khác coin). Chất liệu &amp; độ bền in quyết định review — điểm dễ thua nhất.</li>
+          <li><b>IP:</b> scripture public domain (an toàn); tránh artwork/hymn còn bản quyền, logo ministry, quote đã đăng ký. Art in phải nguyên gốc.</li>
+        </ul>
+      </div>
+      <div class="box good">
+        <h4>✅ Đòn bẩy để rút ngắn thời gian</h4>
+        <ul>
+          <li><b>Canh launch trước Q3 (T8–9)</b> để mùa Q4 đầu tiên rơi vào lúc đã có nền → dùng traffic lễ đẩy rank nhanh.</li>
+          <li><b>Bỏ qua đại dương, chiếm long-tail christian trước</b> — nơi cạnh tranh thấp, conversion cao.</li>
+          <li><b>Variations dưới 1 parent</b> (nhiều mẫu hoa/verse) để dồn review.</li>
+          <li><b>Phủ cụm Tây Ban Nha</b> (regalos/mujer/cumpleaños) — mảng đối thủ đã ăn, ít người làm kỹ.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note"><b>Kết luận:</b> ngách "chậm mà chắc" — cần <b>~1 năm + trọn 1 mùa Q4 (~12–15 tháng)</b> để lên vị trí cạnh tranh thật, với 6 tháng đầu chấp nhận đốt PPC. Đổi lại: khi organic đã lên, chi phí ads rất thấp (~5%) và bán đều cả năm.</p>
+  </section>
+
+  <a class="backlink" href="index.html">&larr; Về danh sách báo cáo</a>
+
+  <div class="foot">
+    Nguồn dữ liệu: <b>SellerSprite</b> — Reverse ASIN + Traffic Share Trend (Amazon US, 07/2026). Footprint keyword &amp; traffic share là ước tính thuật toán để so sánh tương đối. ASIN &amp; thương hiệu nêu ra chỉ nhằm phân tích cạnh tranh, không khuyến nghị sao chép. Nội bộ UOYmedia — không chia sẻ ra ngoài tổ chức.
+  </div>
+
+</div>
+</body>
+</html>
