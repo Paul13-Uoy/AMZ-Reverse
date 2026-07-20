@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B0GVCJQCRD — Chẩn đoán con đường &amp; Playbook Ads / Keyword</title>
+<meta name="description" content="Chẩn đoán ASIN get-well hug blanket + kiến trúc keyword 4 tầng &amp; cấu trúc campaign ads (bid, cắt term). Rõ đâu là số liệu SPS, đâu là giả định.">
+
+<style>
+  :root{
+    --ground:#FBFAF7;--card:#FFFFFF;--ink:#26242B;--muted:#6E6A73;--line:#E7E1D8;
+    --navy:#20283A;--navy-soft:#E7EAF0;
+    --amber:#B5822A;--amber-soft:#F6ECD6;--amber-line:#E4CF9E;
+    --sage:#5E7355;--sage-soft:#E7EEE2;--sage-line:#CADBBF;
+    --red:#B23A2E;--red-soft:#F6E1DD;--red-line:#E7C4BE;
+    --plum:#7A4E63;--plum-soft:#F1E7EC;
+    --mono:"Consolas","SF Mono",ui-monospace,"Roboto Mono",monospace;
+    --serif:Cambria,Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,sans-serif;margin:0;padding:0 20px 72px;line-height:1.58;font-size:16px}
+  .wrap{max-width:1000px;margin:0 auto}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;margin:0;text-wrap:balance}
+  p{margin:0}
+  a{color:var(--amber)}
+  .mono{font-family:var(--mono)}
+
+  .plate{background:var(--navy);border-radius:14px;margin:34px 0 10px;padding:32px 34px 26px;color:#EEF0F5;position:relative;overflow:hidden}
+  .plate::after{content:"";position:absolute;right:-50px;top:-50px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(181,130,42,.4),transparent 68%);pointer-events:none}
+  .kick{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#D9B466}
+  .plate h1{font-size:clamp(24px,4vw,36px);line-height:1.1;margin:9px 0 12px;color:#FCFAF7}
+  .plate h1 span{color:#E2B45E}
+  .plate p{color:#B7BCC8;max-width:66ch;font-size:15px}
+  .asin{display:inline-block;font-family:var(--mono);font-size:13px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:7px;padding:3px 10px;margin-top:14px;color:#EAD9BC}
+
+  .spec{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:14px 0 8px}
+  .spec div{background:var(--card);padding:15px 17px}
+  .spec dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .spec dd{margin:5px 0 0;font-family:var(--serif);font-size:22px;font-weight:600;color:var(--navy)}
+  .spec dd small{font-size:12px;color:var(--muted);font-weight:400;font-family:"Segoe UI",sans-serif}
+  @media(max-width:720px){.spec{grid-template-columns:repeat(2,1fr)}}
+
+  /* legend badges */
+  .legend{display:flex;gap:18px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:14px 0 4px;font-size:13.5px;color:#3E3C45}
+  .b{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.04em;padding:2px 7px;border-radius:5px;vertical-align:1px}
+  .b.sps{background:var(--sage-soft);color:var(--sage);border:1px solid var(--sage-line)}
+  .b.asm{background:var(--amber-soft);color:var(--amber);border:1px solid var(--amber-line)}
+
+  section{margin:44px 0 0}
+  .head{display:flex;align-items:baseline;gap:13px;border-bottom:2px solid var(--navy);padding-bottom:9px;margin-bottom:20px}
+  .head .no{font-family:var(--mono);font-size:13px;color:var(--amber);font-weight:700}
+  .head h2{font-size:24px}
+  .lead{max-width:78ch;color:#3C3A42;margin-bottom:16px}
+
+  .verdict{border-radius:12px;padding:18px 22px;border:1px solid var(--red-line);background:var(--red-soft);margin-bottom:16px}
+  .verdict h3{font-size:19px;color:var(--red);margin-bottom:6px}
+  .verdict p{font-size:14.5px;color:#4A2620}
+
+  .tw{overflow-x:auto;border:1px solid var(--line);border-radius:11px;margin:8px 0}
+  table{border-collapse:collapse;width:100%;min-width:720px;font-size:13.5px;background:var(--card)}
+  th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--navy);color:#EBEEF3;font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;text-transform:uppercase;font-weight:600}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:#FBFAF7}
+  .vol{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+  .tag{font-family:var(--mono);font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;white-space:nowrap}
+  .tag.cut{background:var(--red-soft);color:var(--red)}
+  .tag.push{background:var(--sage-soft);color:var(--sage)}
+  .tag.def{background:var(--navy-soft);color:var(--navy)}
+  .tag.test{background:var(--amber-soft);color:var(--amber)}
+  .bid{font-family:var(--mono);font-weight:700;color:var(--amber)}
+
+  /* tier cards */
+  .tier{border-radius:12px;border:1px solid var(--line);background:var(--card);padding:16px 18px;margin-bottom:12px;border-left:6px solid var(--line)}
+  .tier.A{border-left-color:var(--sage)}
+  .tier.B{border-left-color:var(--navy)}
+  .tier.C{border-left-color:var(--amber)}
+  .tier.D{border-left-color:var(--red)}
+  .tier .th{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+  .tier .lv{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:6px}
+  .tier.A .lv{background:var(--sage-soft);color:var(--sage)}
+  .tier.B .lv{background:var(--navy-soft);color:var(--navy)}
+  .tier.C .lv{background:var(--amber-soft);color:var(--amber)}
+  .tier.D .lv{background:var(--red-soft);color:var(--red)}
+  .tier h3{font-size:17px}
+  .tier .role{font-size:13.5px;color:var(--muted)}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+  @media(max-width:640px){.split{grid-template-columns:1fr}}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:16px 18px}
+  .box h4{font-size:15px;margin-bottom:8px}
+  .box ul{margin:0;padding-left:19px;font-size:14px;color:#3E3C45}
+  .box li{margin:5px 0}
+  .box.warn{background:var(--red-soft);border-color:var(--red-line)}
+  .box.warn h4{color:var(--red)}
+  .box.good{background:var(--sage-soft);border-color:var(--sage-line)}
+  .box.good h4{color:var(--sage)}
+
+  /* budget bar */
+  .bud{display:flex;height:38px;border-radius:8px;overflow:hidden;margin:12px 0 6px;font-family:var(--mono);font-size:11px;font-weight:700;color:#fff}
+  .bud div{display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2px}
+  .bud .s1{background:var(--sage)}.bud .s2{background:var(--amber)}.bud .s3{background:var(--plum)}.bud .s4{background:var(--navy)}.bud .s5{background:#9AA0AB}
+
+  .rail{list-style:none;margin:0;padding:0;border-left:3px solid var(--amber-line)}
+  .rail li{position:relative;padding:0 0 18px 24px}
+  .rail li::before{content:"";position:absolute;left:-9px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--card);border:3px solid var(--amber)}
+  .rail li.gate::before{background:var(--red);border-color:var(--red)}
+  .rail .when{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber)}
+  .rail .what{font-weight:600;font-family:var(--serif)}
+  .rail .why{color:var(--muted);font-size:14px}
+
+  .note{background:var(--amber-soft);border:1px solid var(--amber-line);border-radius:9px;padding:13px 17px;font-size:14px;color:#5E4410;margin-top:16px}
+  .foot{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+  .backlink{display:inline-block;margin:26px 0 0;font-family:var(--mono);font-size:12.5px;color:var(--amber);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="plate">
+    <div class="kick">UOYmedia · Amazon Reverse ASIN · Ads Playbook</div>
+    <h1>Get-Well "Hug" Blanket — Chẩn đoán con đường &amp; <span>Playbook Ads / Keyword</span></h1>
+    <p>ASIN đang đi mô hình POD phủ-rộng: 1 mẫu sunflower "sending a hug" + đổ ads khắp mọi occasion quà nữ. Report này chẩn đoán nó có đánh được không, và dựng cấu trúc campaign + kiến trúc keyword cụ thể (bid, cắt term).</p>
+    <span class="asin">ASIN: B0GVCJQCRD · WRAPIX Get Well Gifts for Women · $22.95</span>
+  </div>
+
+  <dl class="spec">
+    <div><dt>Ra mắt</dt><dd>~2,5 th <small>· 02/05/2026</small></dd></div>
+    <div><dt>BSR / Rating</dt><dd>85,165 <small>· 4.7★ / 270 rv</small></dd></div>
+    <div><dt>Traffic split</dt><dd>Paid 52% <small>· Org 59% (footprint 248 kw)</small></dd></div>
+    <div><dt>Review pace</dt><dd>~108/th <small>· rất nhanh</small></dd></div>
+  </dl>
+
+  <div class="legend">
+    <span><span class="b sps">SPS</span> = số liệu đọc trực tiếp từ SellerSprite (fact).</span>
+    <span><span class="b asm">GIẢ ĐỊNH</span> = diễn giải / suy luận theo hiểu biết vận hành, <b>chưa đo trực tiếp</b> — cần verify khi chạy thật.</span>
+  </div>
+
+  <!-- 01 DIAGNOSIS -->
+  <section>
+    <div class="head"><span class="no">01</span><h2>Chẩn đoán: đang đi con đường nào &amp; có đánh được không</h2></div>
+    <p class="lead"><b>Con đường (SPS):</b> một mẫu hero sunflower "sending a hug" → earn organic từ halo <span class="mono">sunflower throw blanket</span> (527k) + <span class="mono">hug blanket</span>; đồng thời <b>đổ ads phủ khắp</b> occasion quà nữ (get well, thinking of you, grandma, christian, thank you, inspirational...). Đây là mô hình POD volume phủ-rộng-một-mẫu.</p>
+
+    <div class="verdict">
+      <h3>Verdict: mô hình chạy được, nhưng thực thi HIỆN TẠI đang rò rỉ — giữ nguyên thì bleed hơn breakout</h3>
+      <p>Sau 2,5 tháng, organic mọc SAI chỗ: chỉ bám <span class="mono">sunflower throw blanket</span> (intent decor, lệch) &amp; <span class="mono">hug blanket</span> (chỉ 1.6k). Các term RA TIỀN (<span class="mono">get well gifts for women</span> 48k, <span class="mono">get well soon</span> 19k) vẫn <b>0% organic / 100% ads</b> → tiền ads chưa chuyển hoá thành rank ở nơi cần. <span class="b sps">SPS</span></p>
+    </div>
+
+    <div class="split">
+      <div class="box warn">
+        <h4>🚩 Rò rỉ 1 — Relevance loãng</h4>
+        <p style="font-size:14px;color:#4A2620"><b>Fact <span class="b sps">SPS</span>:</b> ASIN phủ đồng thời nhiều intent trái ngược — decor (<span class="mono">sunflower throw blanket / throws</span>), get-well, <span class="mono">christian gifts</span>, <span class="mono">grandma blanket</span> — phần lớn qua ads (Keywords type = "Brand ad words").</p>
+        <p style="font-size:14px;color:#4A2620;margin-top:8px"><b>Diễn giải <span class="b asm">GIẢ ĐỊNH</span>:</b> phủ quá nhiều intent làm Amazon khó "hiểu" SP này là gì → pha loãng relevance, cản việc lên organic term lõi. <i>(Đây là suy luận theo nguyên lý SEO Amazon, SPS không có chỉ số đo trực tiếp điều này.)</i></p>
+      </div>
+      <div class="box warn">
+        <h4>🚩 Rò rỉ 2 — Nghi ngờ ads lãng phí</h4>
+        <p style="font-size:14px;color:#4A2620"><b>Fact <span class="b sps">SPS</span>:</b> chạy ads 100% trên <span class="mono">grandma blanket</span> (746k), <span class="mono">christian gifts for women</span> (75k), <span class="mono">throws</span> (27k) — Org 0%.</p>
+        <p style="font-size:14px;color:#4A2620;margin-top:8px"><b>Diễn giải <span class="b asm">GIẢ ĐỊNH</span>:</b> các term này CPC cao &amp; relevance thấp với mẫu get-well-sunflower → nghi ngờ đốt ngân sách vào impression lệch. <i>(CPC/ACOS thực CHƯA được lấy từ SPS — đây là giả định dựa hiểu biết term volume lớn thường CPC cao; cần verify bằng Bid Tracker/ACOS thật.)</i></p>
+      </div>
+    </div>
+    <p class="note"><b>Kết luận chẩn đoán:</b> đánh được — <i>với điều kiện</i> <b>thu hẹp net + ép CVR + cắt ads rác</b>. Nếu tới ~tháng 6 term lõi vẫn 0% organic &amp; ACOS chưa về ngưỡng lãi → phải xem lại từ <b>hero design</b> hoặc lên <b>bundle care-package</b>.</p>
+  </section>
+
+  <!-- 02 KEYWORD ARCHITECTURE -->
+  <section>
+    <div class="head"><span class="no">02</span><h2>Kiến trúc keyword 4 tầng</h2></div>
+    <p class="lead">Nguyên tắc: <b>tập trung ngân sách vào cụm intent MATCH (get-well / think-of-you / comfort)</b>, dùng organic sunflower làm traffic phụ giá rẻ, và <b>cắt sạch term lệch relevance</b>. Cột "Trạng thái" là <span class="b sps">SPS</span>; cột "Bid gợi ý" là <span class="b asm">GIẢ ĐỊNH</span> (điểm khởi đầu để test, chỉnh theo ACOS thật).</p>
+
+    <div class="tier A">
+      <div class="th"><span class="lv">Tầng A</span><h3>Core Harvest — intent MATCH, bid mạnh</h3></div>
+      <p class="role">Nơi sản phẩm đúng nhất &amp; CVR cao nhất. Mục tiêu: chiếm top + chuyển thành organic. Match: Exact.</p>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Keyword</th><th>Search/M <span class="b sps">SPS</span></th><th>Trạng thái hiện tại <span class="b sps">SPS</span></th><th>Hành động</th><th>Bid <span class="b asm">GIẢ ĐỊNH</span></th></tr></thead>
+        <tbody>
+          <tr><td>get well gifts for women</td><td class="vol">48,005</td><td>Ads 100% · SP P2 #8 · Org 0%</td><td><span class="tag push">Chiếm</span></td><td class="bid">$1.20–1.80</td></tr>
+          <tr><td>get well soon gifts for women</td><td class="vol">18,906</td><td>Ads 99.6% · SP P2 #2</td><td><span class="tag push">Chiếm</span></td><td class="bid">$1.20–1.70</td></tr>
+          <tr><td>thinking of you gifts for women</td><td class="vol">13,418</td><td>Org P3 #35 (đã có organic)</td><td><span class="tag push">Đẩy lên top</span></td><td class="bid">$0.90–1.40</td></tr>
+          <tr><td>sending you a hug gift / blanket</td><td class="vol">—*</td><td>term intent lõi (khớp thông điệp)</td><td><span class="tag push">Chiếm</span></td><td class="bid">$1.00–1.50</td></tr>
+          <tr><td>feel better / encouragement gifts for women</td><td class="vol">—*</td><td>mở rộng cùng intent</td><td><span class="tag test">Test→A</span></td><td class="bid">$0.80–1.20</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src" style="font-size:12px;color:var(--muted);margin:4px 2px 0">*<span class="b asm">GIẢ ĐỊNH</span>: chưa lấy volume cụ thể trong phiên này — thêm vào theo intent, verify volume trước khi bid.</p>
+
+    <div class="tier B" style="margin-top:20px">
+      <div class="th"><span class="lv">Tầng B</span><h3>Design halo — phòng thủ organic, bid THẤP</h3></div>
+      <p class="role">Đã có organic, chỉ giữ chỗ. Cẩn trọng: sunflower throw blanket là intent DECOR (CVR thấp cho blanket-quà) → không đốt mạnh.</p>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Keyword</th><th>Search/M <span class="b sps">SPS</span></th><th>Trạng thái <span class="b sps">SPS</span></th><th>Hành động</th><th>Bid <span class="b asm">GIẢ ĐỊNH</span></th></tr></thead>
+        <tbody>
+          <tr><td>sunflower throw blanket</td><td class="vol">527,714</td><td>Org P1 #49 (decor intent)</td><td><span class="tag def">Defensive thấp</span></td><td class="bid">$0.35–0.60</td></tr>
+          <tr><td>hug blanket</td><td class="vol">1,642</td><td>Org P1 #53</td><td><span class="tag def">Defensive thấp</span></td><td class="bid">$0.40–0.70</td></tr>
+          <tr><td>cozy throw blanket gift</td><td class="vol">—*</td><td>mở rộng</td><td><span class="tag test">Test nhỏ</span></td><td class="bid">$0.40–0.70</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tier C" style="margin-top:20px">
+      <div class="th"><span class="lv">Tầng C</span><h3>Adjacent — test CVR, thắng thì đẩy lên A</h3></div>
+      <p class="role">Cùng "vũ trụ" comfort/recovery. Match: Phrase, budget nhỏ, promote winner.</p>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Keyword</th><th>Search/M <span class="b sps">SPS</span></th><th>Trạng thái <span class="b sps">SPS</span></th><th>Hành động</th><th>Bid <span class="b asm">GIẢ ĐỊNH</span></th></tr></thead>
+        <tbody>
+          <tr><td>cancer care gifts for women</td><td class="vol">20,641</td><td><b>Org P1 #31</b> (đã organic tốt!)</td><td><span class="tag push">Đẩy mạnh</span></td><td class="bid">$0.90–1.30</td></tr>
+          <tr><td>inspirational gifts for women</td><td class="vol">19,752</td><td>Ads 100% · Org 0%</td><td><span class="tag test">Test CVR</span></td><td class="bid">$0.70–1.10</td></tr>
+          <tr><td>sympathy / chemo care / long distance gift</td><td class="vol">—*</td><td>mở rộng cùng intent</td><td><span class="tag test">Test</span></td><td class="bid">$0.60–1.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tier D" style="margin-top:20px">
+      <div class="th"><span class="lv">Tầng D</span><h3>CẮT — lệch relevance, drain budget</h3></div>
+      <p class="role">Thêm vào Negative (exact/phrase) ở campaign Auto/Broad. Lý do "lãng phí" là <span class="b asm">GIẢ ĐỊNH</span> (chưa đo ACOS); nhưng relevance lệch là rõ.</p>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Keyword</th><th>Search/M <span class="b sps">SPS</span></th><th>Trạng thái <span class="b sps">SPS</span></th><th>Vì sao cắt</th></tr></thead>
+        <tbody>
+          <tr><td>grandma blanket</td><td class="vol">746,553</td><td>Ads 100% · Org 0%</td><td>Generic/decor, không khớp thông điệp get-well <span class="tag cut">CẮT</span></td></tr>
+          <tr><td>christian gifts for women</td><td class="vol">75,032</td><td>Ads 100% · Org 0%</td><td>Intent tôn giáo, mẫu không phải christian <span class="tag cut">CẮT</span></td></tr>
+          <tr><td>religious gifts for women</td><td class="vol">26,462</td><td>Ads 100% · Org 0%</td><td>Như trên <span class="tag cut">CẮT</span></td></tr>
+          <tr><td>throws</td><td class="vol">27,808</td><td>Ads 100% · Org 0%</td><td>Decor generic, CVR quà thấp <span class="tag cut">CẮT</span></td></tr>
+          <tr><td>thank you gifts</td><td class="vol">38,358</td><td>Ads 100% · Org 0%</td><td>Borderline → <span class="tag test">giữ hẹp / test</span>, không bid rộng</td></tr>
+          <tr><td>employee / gifts for women (broad)</td><td class="vol">20,642+</td><td>Ads</td><td>Quá rộng/lệch → <span class="tag cut">CẮT</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 03 CAMPAIGN STRUCTURE -->
+  <section>
+    <div class="head"><span class="no">03</span><h2>Cấu trúc campaign Ads</h2></div>
+    <p class="lead">6 campaign, phân vai rõ. Tỉ lệ budget &amp; bid dưới đây là <span class="b asm">GIẢ ĐỊNH</span> điểm khởi đầu — điều chỉnh theo ACOS/CVR thật sau 2–3 tuần.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>#</th><th>Campaign</th><th>Loại / Match</th><th>Chứa</th><th>Bid <span class="b asm">GĐ</span></th><th>Vai trò</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><b>Core Harvest</b></td><td>SP · Exact</td><td>Tầng A</td><td class="bid">$1.2–1.8</td><td>Chiếm intent get-well, ép organic</td></tr>
+          <tr><td>2</td><td><b>Intent Expansion</b></td><td>SP · Phrase</td><td>Tầng A + C</td><td class="bid">$0.7–1.2</td><td>Khai phá long-tail, nuôi Exact</td></tr>
+          <tr><td>3</td><td><b>Discovery + Negative mining</b></td><td>SP · Auto</td><td>—</td><td class="bid">$0.45–0.65</td><td>Đào term mới; <b>gắn Tầng D làm negative</b></td></tr>
+          <tr><td>4</td><td><b>Competitor Conquest</b></td><td>SP · Product (ASIN)</td><td>ASIN đối thủ get-well blanket &amp; care-box</td><td class="bid">$0.8–1.2</td><td>Cướp click trên trang đối thủ</td></tr>
+          <tr><td>5</td><td><b>Design Defense</b></td><td>SP · Exact</td><td>Tầng B</td><td class="bid">$0.35–0.7</td><td>Giữ organic sunflower/hug, không đốt</td></tr>
+          <tr><td>6</td><td><b>Brand + Retarget</b></td><td>SB / SD*</td><td>Brand headline + retarget viewer</td><td class="bid">thấp</td><td>*Chỉ khi có Brand Registry</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin:22px 0 6px;font-size:17px">Phân bổ ngân sách <span class="b asm">GIẢ ĐỊNH</span></h3>
+    <div class="bud">
+      <div class="s1" style="flex-basis:45%">Core Harvest 45%</div>
+      <div class="s2" style="flex-basis:15%">Expansion 15%</div>
+      <div class="s3" style="flex-basis:20%">Conquest 20%</div>
+      <div class="s4" style="flex-basis:12%">Auto 12%</div>
+      <div class="s5" style="flex-basis:8%">Def 8%</div>
+    </div>
+    <p class="src" style="font-size:12px;color:var(--muted)">Dồn ~60% vào intent get-well/think-of-you (Core + phần Expansion), 20% cướp đối thủ, phần nhỏ cho discovery &amp; phòng thủ. KHÔNG rót vào term Tầng D.</p>
+
+    <div class="split" style="margin-top:16px">
+      <div class="box good">
+        <h4>✅ Negative list (gắn ngay vào Auto/Broad)</h4>
+        <ul>
+          <li><b>Exact/Phrase negative:</b> grandma, christian, religious, jewish, throws, throw blanket for couch/sofa/bed, employee, teacher, gifts for women (broad chung), home decor.</li>
+          <li>Mục tiêu: chặn Amazon "thả" ads vào intent decor/tôn giáo/quá rộng.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h4>🎯 Ép CVR để mở khoá organic (song song ads)</h4>
+        <ul>
+          <li>Ảnh chính kiểu <b>"món quà"</b>: kèm hộp/thẻ message, chữ "sending a hug".</li>
+          <li>A+ kể chuyện "cái ôm khi ở xa" + ảnh review cảm xúc.</li>
+          <li>Ads dù mạnh mấy cũng vô ích nếu CVR yếu — Amazon chỉ trao organic khi CVR ổn.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 ECONOMICS + GATES -->
+  <section>
+    <div class="head"><span class="no">04</span><h2>Kinh tế &amp; mốc quyết định</h2></div>
+    <div class="box" style="margin-bottom:16px">
+      <h4>💵 Khung kinh tế <span class="b asm">GIẢ ĐỊNH</span> (cần thay bằng số thật của bạn)</h4>
+      <ul>
+        <li>Giá bán <b>$22.95</b> <span class="b sps">SPS</span>. COGS + FBA giả định ~<b>$9–11</b> → biên gộp trước ads ~<b>50–55%</b>.</li>
+        <li><b>Break-even ACOS ~45%.</b> Pha launch chấp nhận ACOS <b>60–90%</b> (đầu tư) trong 3–4 tháng, ép giảm dần.</li>
+        <li>Đây là chăn lẻ → biên mỏng hơn bundle; kiểm soát ACOS chặt, đừng đốt term Tầng D.</li>
+      </ul>
+    </div>
+
+    <ul class="rail">
+      <li><div class="when">Tuần 1–3</div><div class="what">Bật 6 campaign, gắn negative Tầng D, thu data.</div><div class="why">Chưa tối ưu vội; gom đủ click/CVR mỗi term.</div></li>
+      <li><div class="when">Tháng 1–2</div><div class="what">Cắt term ACOS xấu, dồn budget term CVR cao; đẩy cancer care (đã organic).</div><div class="why">Bắt đầu thấy term nào "chịu" chuyển đổi.</div></li>
+      <li><div class="when">Tháng 3</div><div class="what">Kỳ vọng term Tầng A bắt đầu có organic rank (không còn 0%).</div><div class="why">Dấu hiệu paid→organic flywheel khởi động.</div></li>
+      <li class="gate"><div class="when">Tháng 5–6 · GATE quyết định</div><div class="what"><span class="mono">get well gifts for women</span> phải có organic (thoát 100% ads) &amp; TACOS đang giảm.</div><div class="why"><b>Nếu KHÔNG:</b> vấn đề ở design/CVR/định dạng → đổi hero design khác biệt hơn, hoặc nâng cấp <b>bundle care-package $39.99</b> (định dạng đang ăn tiền thật ~$90k/th <span class="b sps">SPS</span>).</div></li>
+    </ul>
+    <p class="note"><b>1 câu:</b> Con đường phủ-rộng KHÔNG sai, nhưng phải chuyển từ "spray khắp nơi" sang <b>"tập trung cụm get-well/think-of-you + ép CVV + cắt rác"</b>. Có mốc gate tháng 6 để quyết đi tiếp hay đổi design/định dạng.</p>
+  </section>
+
+  <a class="backlink" href="index.html">&larr; Về danh sách báo cáo</a>
+
+  <div class="foot">
+    Nguồn: <b>SellerSprite</b> — Reverse ASIN (Amazon US, 07/2026), các mục gắn <span class="b sps">SPS</span>. Các mục gắn <span class="b asm">GIẢ ĐỊNH</span> (bid, budget %, CPC, ACOS, biên, "Amazon không hiểu", "ads lãng phí") là <b>diễn giải/suy luận vận hành, chưa đo trực tiếp</b> — phải verify bằng số thật (Bid Tracker, báo cáo ACOS, giá vốn) trước khi áp dụng. ASIN &amp; thương hiệu chỉ dùng để phân tích cạnh tranh. Nội bộ UOYmedia — không chia sẻ ra ngoài tổ chức.
+  </div>
+
+</div>
+</body>
+</html>
