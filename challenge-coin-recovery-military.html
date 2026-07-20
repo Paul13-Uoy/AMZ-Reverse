@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Challenge Coin — Sobriety/AA &amp; Military/First-Responder</title>
+<style>
+  :root{
+    --ground:#FBFAF7;--card:#FFFFFF;--ink:#1F2530;--muted:#6B6E76;--line:#E4DFD4;
+    --navy:#16233B;--navy-soft:#E7EBF1;
+    --gold:#A9772B;--gold-soft:#F5EAD3;--gold-line:#E4CF9E;
+    --red:#B23A2E;--red-soft:#F5DFDB;
+    --go:#2E7D46;--go-soft:#E1F0E5;--wa:#A87E00;--wa-soft:#F7EED3;--bad:#B3382E;--bad-soft:#F5DDDA;
+    --mono:"Consolas","SF Mono",ui-monospace,"Roboto Mono",monospace;
+    --serif:Cambria,Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,sans-serif;margin:0;padding:0 20px 72px;line-height:1.58;font-size:16px}
+  .wrap{max-width:1000px;margin:0 auto}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;margin:0;text-wrap:balance}
+  p{margin:0}
+  a{color:var(--gold)}
+  .mono{font-family:var(--mono)}
+
+  /* masthead */
+  .plate{background:var(--navy);border-radius:14px;margin:34px 0 10px;padding:34px 34px 30px;color:#EEF1F6;position:relative;overflow:hidden}
+  .plate::after{content:"";position:absolute;right:-40px;top:-40px;width:230px;height:230px;border-radius:50%;
+        background:radial-gradient(circle at 50% 50%,rgba(169,119,43,.32),transparent 68%);pointer-events:none}
+  .kick{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#C9A45A}
+  .plate h1{font-size:clamp(27px,4.4vw,42px);line-height:1.05;margin:9px 0 12px;color:#FCFAF5}
+  .plate h1 span{color:#D9AE5E}
+  .plate p{color:#B9C1CE;max-width:64ch;font-size:15px}
+  .badges{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+  .badges span{font-family:var(--mono);font-size:11px;letter-spacing:.05em;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:99px;padding:5px 12px;color:#DCE2EC}
+
+  /* spec strip */
+  .spec{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:14px 0 8px}
+  .spec div{background:var(--card);padding:15px 17px}
+  .spec dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .spec dd{margin:5px 0 0;font-family:var(--serif);font-size:23px;font-weight:600;color:var(--navy)}
+  .spec dd small{font-size:12px;color:var(--muted);font-weight:400;font-family:"Segoe UI",sans-serif}
+  @media(max-width:720px){.spec{grid-template-columns:repeat(2,1fr)}}
+
+  .src{font-size:12px;color:var(--muted);margin:12px 2px 0}
+
+  /* section */
+  section{margin:44px 0 0}
+  .head{display:flex;align-items:baseline;gap:13px;border-bottom:2px solid var(--navy);padding-bottom:9px;margin-bottom:20px}
+  .head .no{font-family:var(--mono);font-size:13px;color:var(--gold);font-weight:700}
+  .head h2{font-size:25px}
+  .lead{max-width:76ch;color:#3A3E48;margin-bottom:18px}
+
+  /* niche tab strip */
+  .nichebar{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 22px}
+  .nichebar a{flex:1;min-width:240px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:10px;padding:14px 18px;transition:transform .12s,border-color .12s}
+  .nichebar a:hover{transform:translateY(-1px)}
+  .nichebar .n1{border-left-color:var(--go)}
+  .nichebar .n2{border-left-color:var(--red)}
+  .nichebar h3{font-size:18px;margin-bottom:3px}
+  .nichebar p{font-size:13px;color:var(--muted)}
+
+  /* cards grid */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:820px){.grid3{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.grid3,.grid2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:17px 18px}
+  .card .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:var(--gold-soft);border-radius:5px;padding:3px 9px;display:inline-block}
+  .card h4{font-size:17px;margin:11px 0 5px}
+  .card p{font-size:14px;color:#42464E}
+
+  /* tables */
+  .tw{overflow-x:auto;border:1px solid var(--line);border-radius:11px;margin:4px 0}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px;background:var(--card)}
+  th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--navy);color:#EBEEF3;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;position:sticky;top:0}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:#FBFAF7}
+  td .mono{font-size:12.5px;color:var(--muted)}
+  .rev{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+  .pill{font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:99px;white-space:nowrap}
+  .pill.win{background:var(--go-soft);color:var(--go)}
+  .pill.new{background:var(--gold-soft);color:var(--gold)}
+  .pill.old{background:var(--navy-soft);color:var(--navy)}
+  .pill.acc{background:var(--red-soft);color:var(--red)}
+
+  /* coin gallery */
+  .coins{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:760px){.coins{grid-template-columns:repeat(2,1fr)}}
+  figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  figure .art{background:radial-gradient(circle at 50% 40%,#FFFDF8,#F0EBDF);display:flex;justify-content:center;padding:14px 0 6px}
+  figure svg{width:78%;height:auto}
+  figcaption{padding:11px 14px 14px;border-top:1px solid var(--line)}
+  figcaption .t{font-family:var(--serif);font-weight:600;font-size:16px}
+  figcaption .h{font-size:12.5px;color:var(--gold);margin-top:2px}
+
+  /* keyword chips */
+  .kws{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .kw{font-family:var(--mono);font-size:12.5px;background:var(--card);border:1px solid var(--line);border-radius:7px;padding:5px 10px}
+  .kw b{color:var(--navy)}
+  .kw.hot{border-color:var(--gold-line);background:var(--gold-soft)}
+
+  /* two-col info */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.split{grid-template-columns:1fr}}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:16px 18px}
+  .box h4{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .box ul{margin:0;padding-left:19px;font-size:14px;color:#3E424B}
+  .box li{margin:5px 0}
+  .box.warn{background:var(--red-soft);border-color:#E7C4BE}
+  .box.warn h4{color:var(--red)}
+  .box.good{background:var(--go-soft);border-color:#BFDDC8}
+  .box.good h4{color:var(--go)}
+
+  /* seasonality chart */
+  .cal{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 18px 12px}
+  .callab{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:6px}
+  .callab .name{font-family:var(--serif);font-weight:600;font-size:16px}
+  .callab .verdict{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:99px}
+  .bars{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;align-items:end;height:120px;margin:12px 0 4px}
+  .bars .b{background:linear-gradient(180deg,var(--gold),#CBA45C);border-radius:4px 4px 0 0;position:relative}
+  .bars .b.peak{background:linear-gradient(180deg,var(--red),#C9564A)}
+  .months{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;font-family:var(--mono);font-size:10px;color:var(--muted);text-align:center}
+  .cal .peaks{margin-top:10px;font-size:13px;color:#42464E}
+  .cal .peaks b{color:var(--navy)}
+
+  /* timeline */
+  .rail{list-style:none;margin:0;padding:0;border-left:3px solid var(--gold-line)}
+  .rail li{position:relative;padding:0 0 18px 24px}
+  .rail li::before{content:"";position:absolute;left:-9px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--card);border:3px solid var(--gold)}
+  .rail li.peak::before{background:var(--red);border-color:var(--red)}
+  .rail .when{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+  .rail .what{font-weight:600;font-family:var(--serif)}
+  .rail .why{color:var(--muted);font-size:14px}
+
+  .note{background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:9px;padding:13px 17px;font-size:14px;color:#5E4410;margin-top:16px}
+  .foot{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+  .backlink{display:inline-block;margin:26px 0 0;font-family:var(--mono);font-size:12.5px;color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- MASTHEAD -->
+  <div class="plate">
+    <div class="kick">UOYmedia · Amazon Market Research · Reverse</div>
+    <h1>Challenge Coin — <span>Sobriety/AA</span> &amp; <span>Military / First-Responder</span></h1>
+    <p>Đào sâu 2 ngách challenge coin có sức mua cao nhất: ASIN &amp; doanh thu đối thủ, từ khóa &amp; ads, và tính mùa vụ theo tháng — để chốt mẫu, đi hàng và launching đúng thời điểm.</p>
+    <div class="badges">
+      <span>🇺🇸 Amazon US</span><span>Nguồn: SellerSprite (30-day, 07/2026)</span><span>Coin: die-struck kim loại 1.75–2"</span>
+    </div>
+  </div>
+
+  <dl class="spec">
+    <div><dt>"challenge coin" search/th</dt><dd>24,939 <small>evergreen</small></dd></div>
+    <div><dt>Giá coin cao cấp</dt><dd>$14–22 <small>gift-set</small></dd></div>
+    <div><dt>Rào cản review</dt><dd>Thấp <small>tân binh &lt;120 rv thắng</small></dd></div>
+    <div><dt>Doanh thu top ASIN</dt><dd>$27–36k <small>/tháng</small></dd></div>
+  </dl>
+  <p class="src">⚠️ Số search/purchase/revenue là <b>ước tính của SellerSprite</b> từ hành vi tìm kiếm &amp; BSR của Amazon, dùng để so sánh tương đối — không phải doanh thu thực niêm yết.</p>
+
+  <!-- EXEC SUMMARY -->
+  <section>
+    <div class="head"><span class="no">00</span><h2>Chốt nhanh</h2></div>
+    <div class="nichebar">
+      <a class="n1" href="#sobriety">
+        <h3>♻️ Sobriety / AA — vào trước</h3>
+        <p>Cung thấp, PPC $0.38, LTV cao (mua lại theo mốc năm). Có subcategory riêng. Tân binh 2025 đã $7.8k/th với 81 review.</p>
+      </a>
+      <a class="n2" href="#military">
+        <h3>🎖️ Military / First-Responder</h3>
+        <p>Tệp lớn nhưng tiền dồn vào display stand ($27–35k/th) + sóng 250th. Coin theo quân chủng: rủi ro IP cao, phải né kỹ.</p>
+      </a>
+    </div>
+    <p class="lead">Điểm mấu chốt: với cả 2 ngách, <b>coin/medallion cao cấp dạng gift-set ($14–22)</b> kiếm tiền hơn hẳn coin rẻ hay phụ kiện; và <b>rào cản review thấp</b> — nhiều listing mới &lt;2 năm, &lt;150 review vẫn lọt top. Đây là ngách "thắng bằng thiết kế cảm xúc + đóng gói quà + phủ đúng từ khóa", không phải bằng giá.</p>
+  </section>
+
+  <!-- ============ NICHE 1: SOBRIETY ============ -->
+  <section id="sobriety">
+    <div class="head"><span class="no">01</span><h2>♻️ Sobriety / AA Recovery</h2></div>
+    <p class="lead">Ngách gifting cảm xúc mạnh nhất và mua lặp lại theo cột mốc. Amazon có hẳn danh mục con <b>"Sobriety Coins &amp; Chips"</b> — thuận lợi để nhắm BSR. PPC rẻ nhất mình đo được (~$0.38).</p>
+
+    <dl class="spec">
+      <div><dt>seed "sobriety coin"</dt><dd>6,744 <small>search/th</small></dd></div>
+      <div><dt>Purchase rate</dt><dd>2.85% <small>&gt; challenge coin 2.0%</small></dd></div>
+      <div><dt>SP cạnh tranh</dt><dd>~2,626 <small>cung thấp</small></dd></div>
+      <div><dt>PPC bid</dt><dd>~$0.38 <small>rất rẻ</small></dd></div>
+    </dl>
+
+    <h3 style="margin:26px 0 10px;font-size:19px">Đối thủ &amp; doanh thu (phrase "sobriety coin")</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Sản phẩm (Brand)</th><th>ASIN</th><th>Giá</th><th>Doanh thu/th</th><th>Review / ★</th><th>Ra mắt</th><th>Loại</th></tr></thead>
+        <tbody>
+          <tr><td><b>1 Year Sobriety Coin – Tree of Life</b> (MilestoneMint)<br><span class="mono">#1 Sobriety Coins &amp; Chips · 1.652 units</span></td><td class="mono">B0D5DSYTNF</td><td>$21.99</td><td class="rev">$36,327</td><td>1.300+ · 4.9</td><td>2024</td><td><span class="pill win">Dẫn đầu</span></td></tr>
+          <tr><td><b>Moonlit Butterfly of Hope 1 Year</b> "Just for Today" (Vitalway)<br><span class="mono">#8 Sobriety Coins &amp; Chips · 556 units</span></td><td class="mono">B0FKYJSHMJ</td><td>$13.99</td><td class="rev">$7,778</td><td>81 · 4.8</td><td>2025</td><td><span class="pill new">Tân binh</span></td></tr>
+          <tr><td>Premium Leather Coin Holder (handmade)<br><span class="mono">phụ kiện giữ chip</span></td><td class="mono">B0D1QPYJY9</td><td>$9.99</td><td class="rev">$6,294</td><td>448 · 4.7</td><td>2024</td><td><span class="pill acc">Phụ kiện</span></td></tr>
+          <tr><td>AA Coin Holder Keychain (The Token Shop)<br><span class="mono">2 mặt · incumbent phụ kiện</span></td><td class="mono">B09GP385W9</td><td>$6.89</td><td class="rev">$2,708</td><td>2.183 · 4.6</td><td>2021</td><td><span class="pill acc">Phụ kiện</span></td></tr>
+          <tr><td>2 Year Metal AA Medallion (bronze cổ điển)<br><span class="mono">kiểu truyền thống</span></td><td class="mono">B00AB657Q0</td><td>~$8</td><td class="rev">—</td><td>638 · 4.8</td><td>đời cũ</td><td><span class="pill old">Incumbent</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><b>Đọc bảng:</b> coin/medallion cao cấp ($14–22, dạng gift-set) ăn tiền gấp 5–13× phụ kiện $7. Tân binh Vitalway ra 2025 đã $7.8k/th với <b>chỉ 81 review</b> → cửa vào còn rộng. Đối thủ mạnh nhất (MilestoneMint) thắng nhờ thiết kế đẹp + affirmation + 4.9★.</p>
+
+    <h3 style="margin:30px 0 10px;font-size:19px">Thiết kế đang thắng — biểu tượng hy vọng + affirmation</h3>
+    <p class="lead">Xu hướng rời khỏi medallion đồng đúc cổ điển, sang <b>coin nghệ thuật màu</b> mang biểu tượng "vượt qua &amp; tái sinh", mặt sau khắc câu affirmation, bán dạng bộ quà. Mockup concept để brief designer:</p>
+    <div class="coins">
+      <figure>
+        <div class="art">
+          <svg viewBox="0 0 120 120" role="img" aria-label="Coin Tree of Life 1 Year">
+            <circle cx="60" cy="60" r="56" fill="#1d2a44" stroke="#C9A45A" stroke-width="4"/>
+            <circle cx="60" cy="60" r="47" fill="none" stroke="#C9A45A" stroke-width="1.5" opacity=".6"/>
+            <path d="M60 84 V52" stroke="#C9A45A" stroke-width="3"/>
+            <path d="M60 60 q-14 -6 -20 -20 M60 56 q14 -8 20 -22 M60 66 q-11 -4 -16 -15 M60 62 q12 -5 17 -16" stroke="#C9A45A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            <circle cx="40" cy="40" r="3" fill="#D9AE5E"/><circle cx="80" cy="34" r="3" fill="#D9AE5E"/><circle cx="45" cy="45" r="2.4" fill="#D9AE5E"/><circle cx="77" cy="46" r="2.4" fill="#D9AE5E"/>
+            <text x="60" y="96" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#F0E3C4" font-weight="700">1 YEAR</text>
+          </svg>
+        </div>
+        <figcaption><div class="t">Tree of Life</div><div class="h">"…grow new branches, reach for the light"</div></figcaption>
+      </figure>
+      <figure>
+        <div class="art">
+          <svg viewBox="0 0 120 120" role="img" aria-label="Coin Phoenix">
+            <circle cx="60" cy="60" r="56" fill="#7a1f16" stroke="#E0A24A" stroke-width="4"/>
+            <path d="M60 40 q-4 14 -18 20 q12 -2 18 -8 q6 6 18 8 q-14 -6 -18 -20z" fill="#F0C062"/>
+            <path d="M60 44 v30 M52 70 h16" stroke="#F0C062" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M40 84 q20 10 40 0" stroke="#F0C062" stroke-width="2" fill="none"/>
+            <text x="60" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#FBE8C4" font-weight="700">RISE AGAIN</text>
+          </svg>
+        </div>
+        <figcaption><div class="t">Phoenix</div><div class="h">tái sinh · gift set</div></figcaption>
+      </figure>
+      <figure>
+        <div class="art">
+          <svg viewBox="0 0 120 120" role="img" aria-label="Coin Butterfly Just For Today">
+            <circle cx="60" cy="60" r="56" fill="#3c2a63" stroke="#C9A45A" stroke-width="4"/>
+            <g fill="#B98CE0"><path d="M60 58 q-22 -20 -30 -4 q-2 14 30 12z"/><path d="M60 58 q22 -20 30 -4 q2 14 -30 12z"/><path d="M60 62 q-16 16 -24 6 q-2 -10 24 -8z"/><path d="M60 62 q16 16 24 6 q2 -10 -24 -8z"/></g>
+            <rect x="58.5" y="46" width="3" height="34" rx="1.5" fill="#EbdcFb"/>
+            <path d="M22 60 h76" stroke="#C9A45A" stroke-width="1" opacity=".5"/>
+            <text x="60" y="34" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="#EFE6FB" font-weight="700">JUST FOR TODAY</text>
+          </svg>
+        </div>
+        <figcaption><div class="t">Butterfly</div><div class="h">"Just for today" · màu nổi bật</div></figcaption>
+      </figure>
+      <figure>
+        <div class="art">
+          <svg viewBox="0 0 120 120" role="img" aria-label="Coin Sunflower broken and rebuilt">
+            <circle cx="60" cy="60" r="56" fill="#14364a" stroke="#E0A24A" stroke-width="4"/>
+            <g fill="#F0B93B"><circle cx="60" cy="58" r="12"/>
+              <g><rect x="57" y="34" width="6" height="15" rx="3"/><rect x="57" y="67" width="6" height="15" rx="3"/><rect x="36" y="55" width="15" height="6" rx="3"/><rect x="69" y="55" width="15" height="6" rx="3"/></g>
+              <g transform="rotate(45 60 58)"><rect x="57" y="34" width="6" height="15" rx="3"/><rect x="57" y="67" width="6" height="15" rx="3"/><rect x="36" y="55" width="15" height="6" rx="3"/><rect x="69" y="55" width="15" height="6" rx="3"/></g></g>
+            <circle cx="60" cy="58" r="6" fill="#5a3a12"/>
+            <path d="M60 4 L60 116" stroke="#14364a" stroke-width="1.5" opacity=".45"/>
+            <text x="60" y="100" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" fill="#FBE8C4" font-weight="700">BROKEN · REBUILT</text>
+          </svg>
+        </div>
+        <figcaption><div class="t">Sunflower</div><div class="h">"broken glass, rebuilt"</div></figcaption>
+      </figure>
+    </div>
+
+    <div class="split" style="margin-top:22px">
+      <div class="box">
+        <h4>🔑 Từ khóa nên nhắm</h4>
+        <div class="kws">
+          <span class="kw hot"><b>sobriety coin</b> · 6.7k</span>
+          <span class="kw">aa medallion</span>
+          <span class="kw hot">1 / 2 / 5 year sober</span>
+          <span class="kw">sober keychain</span>
+          <span class="kw">sobriety gift</span>
+          <span class="kw">aa chip</span>
+          <span class="kw">recovery coin</span>
+          <span class="kw">na medallion</span>
+          <span class="kw">serenity prayer coin</span>
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-top:10px">SKU theo mốc: 24h · 30/60/90 ngày · 6/9 tháng · 1→40+ năm. Mua lại hằng năm = LTV cao.</p>
+      </div>
+      <div class="box good">
+        <h4>✅ Cách chen chân &amp; ads</h4>
+        <ul>
+          <li><b>PPC rẻ ($0.38):</b> chạy exact-match theo mốc năm + "sobriety gift for men/women".</li>
+          <li>Phủ đủ mốc năm + thêm format <b>keychain/necklace</b> (search cao).</li>
+          <li>Mở rộng <b>NA (Narcotics Anonymous)</b>, recovery, addiction.</li>
+          <li>Packaging quà + thẻ ý nghĩa → đẩy giá lên $14–22.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="box warn" style="margin-top:14px">
+      <h4>⚠️ IP &amp; chất lượng</h4>
+      <ul>
+        <li>Tránh logo <b>tam giác-trong-vòng-tròn</b> &amp; tên "Alcoholics Anonymous"/"NA" (service mark, AA World Services bảo vệ). Dùng biểu tượng generic: tam giác trơn, số La Mã cho số năm, <b>Serenity Prayer</b> (public domain), "one day at a time".</li>
+        <li>Rào cản thật là <b>niềm tin</b> (thị trường tập trung ~46%) — thắng bằng thiết kế đẹp, 4.8★+, đủ mốc. Chọn mạ bền vì coin được cầm/chạm hằng ngày.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ NICHE 2: MILITARY ============ -->
+  <section id="military">
+    <div class="head"><span class="no">02</span><h2>🎖️ Military / First-Responder</h2></div>
+    <p class="lead">Tệp lớn (đa quân chủng) nhưng <b>dòng tiền trong từ khóa "military challenge coin" dồn vào display stand/case</b>, cộng làn sóng mới <b>coin kỷ niệm 250th (1776–2026)</b>. Coin theo quân chủng phải xử lý IP rất kỹ.</p>
+
+    <dl class="spec">
+      <div><dt>Kết quả phrase-match</dt><dd>1,174 <small>gọn hơn sobriety</small></dd></div>
+      <div><dt>Quân chủng lớn nhất</dt><dd>Army <small>&gt; Navy/AF/USMC</small></dd></div>
+      <div><dt>Display stand top</dt><dd>$35k <small>/th · tân binh 2025</small></dd></div>
+      <div><dt>Sóng 250th</dt><dd>Bùng nổ <small>launch T4/2026</small></dd></div>
+    </dl>
+
+    <h3 style="margin:26px 0 10px;font-size:19px">Đối thủ &amp; doanh thu (phrase "military challenge coin")</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Sản phẩm (Brand)</th><th>ASIN</th><th>Giá</th><th>Doanh thu/th</th><th>Review / ★</th><th>Ra mắt</th><th>Loại</th></tr></thead>
+        <tbody>
+          <tr><td><b>Challenge Coin Display Holder</b> — giá gỗ dốc (Yncotte)<br><span class="mono">#4 Slotted Display Stands · 1.008 units</span></td><td class="mono">B0F5V18H1S</td><td>$34.99</td><td class="rev">$35,270</td><td>114 · 4.8</td><td>2025-05</td><td><span class="pill new">Tân binh thắng</span></td></tr>
+          <tr><td><b>Military Coin Display Case</b> — tủ treo tường (DisplayGifts)<br><span class="mono">#165 Display Stands · 651 units</span></td><td class="mono">B002MY82L6</td><td>$41.95</td><td class="rev">$27,309</td><td>2.631 · 4.8</td><td>2017</td><td><span class="pill old">Incumbent</span></td></tr>
+          <tr><td>SH 3D Floating Display Frame (HillSpring)<br><span class="mono">khung nổi 1 coin · giá rẻ</span></td><td class="mono">B07Q9QRW24</td><td>$5.99</td><td class="rev">$6,421</td><td>3.792 · 4.6</td><td>2019</td><td><span class="pill acc">Phụ kiện</span></td></tr>
+          <tr><td><b>5pc 250th Freedom Commemorative Set</b> (1776–2025) — US Capitol &amp; Eagle (Generic)<br><span class="mono">Variation sold 1K+ · doanh thu chưa đủ dữ liệu</span></td><td class="mono">B0GVYNHZ3Z</td><td>~$4*</td><td class="rev">mới</td><td>70 · 4.6</td><td>2026-04</td><td><span class="pill new">Sóng 250th</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><b>Đọc bảng:</b> tiền lớn nhất nằm ở <b>display stand/case</b> — giá gỗ Yncotte ra 2025 đã <b>$35k/th chỉ với 114 review</b> (cửa vào cực rõ, ít phụ thuộc thiết kế, IP an toàn). Coin 250th đang được seller Generic đổ bộ giá rẻ (~$4*) — sóng nóng nhưng <b>thương phẩm hóa nhanh</b>. <span class="mono">*giá có thể theo variation.</span></p>
+
+    <div class="split" style="margin-top:22px">
+      <div class="box">
+        <h4>🧭 3 hướng vào (theo mức rủi ro)</h4>
+        <ul>
+          <li><b>An toàn nhất — Display stand/case:</b> gỗ/acrylic, IP sạch, $27–42, đang có tân binh thắng. Ưu tiên.</li>
+          <li><b>Sóng seasonal — Coin 250th patriotic/military:</b> vào NHANH (Q1–Q2/2026), thiết kế generic (đại bàng, Liberty Bell, "1776–2026"), tránh giá đáy.</li>
+          <li><b>Evergreen — Coin theo quân chủng/nghi thức:</b> Army/Navy/AF/USMC + retirement/enlistment/veteran — biên tốt nhưng IP khắt khe.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h4>🔑 Từ khóa &amp; ads</h4>
+        <div class="kws">
+          <span class="kw hot"><b>challenge coin</b> · 24.9k</span>
+          <span class="kw">challenge coin display / holder</span>
+          <span class="kw">army / navy / air force challenge coin</span>
+          <span class="kw">military retirement gift</span>
+          <span class="kw">veteran coin</span><span class="kw">dd214</span>
+          <span class="kw hot">250th anniversary coin</span>
+          <span class="kw">st michael coin</span><span class="kw">firefighter challenge coin</span>
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-top:10px">PPC ~$0.8–1.2 (đắt hơn sobriety). Với 250th: bid lên mạnh từ T4–T7/2026. Bán kèm coin + stand để bắt cả 2 nhóm search.</p>
+      </div>
+    </div>
+
+    <div class="box warn" style="margin-top:14px">
+      <h4>⚠️ IP là rủi ro số 1 — đọc kỹ trước khi lên khuôn</h4>
+      <ul>
+        <li><b>KHÔNG dùng</b> seal/emblem chính thức DoD &amp; các quân chủng (Army, USMC… có chương trình license), phù hiệu đơn vị cụ thể, huy hiệu sở cảnh sát/PCCC cụ thể, hình người thật.</li>
+        <li><b>An toàn:</b> biểu tượng generic (đại bàng, mỏ neo, cánh bay), text patriotic chung, <b>St. Michael Archangel</b> (tôn giáo public domain), "thin blue/red line", 250th/1776.</li>
+        <li>Trước khi sản xuất: <b>check Design Patent trên SellerSprite</b> + tra nhãn hiệu. Amazon gỡ listing vi phạm rất nhanh.</li>
+      </ul>
+    </div>
+
+    <div class="box good" style="margin-top:14px">
+      <h4>🚓 First-Responder — nhánh phụ, biên cao</h4>
+      <ul>
+        <li>Tín hiệu: firefighter, <b>St. Michael / Archangel Michael</b>, police challenge, law enforcement, corrections, "thin blue line".</li>
+        <li>Nhỏ hơn military nhưng gifting nghề nghiệp cảm xúc cao. Angle an toàn nhất: <b>St. Michael</b> (thánh bảo trợ), EMS/nurse/firefighter generic.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SEASONALITY ============ -->
+  <section id="season">
+    <div class="head"><span class="no">03</span><h2>Tính mùa vụ — theo tháng</h2></div>
+    <p class="lead">Trend tìm kiếm SellerSprite của cả 2 ngách gần như <b>phẳng = evergreen</b> (khác hẳn cụm 250th đang dựng đứng = seasonal). Dưới đây là <b>nhịp nhu cầu theo dịp lễ Mỹ</b> (định hướng) để canh tồn kho &amp; ngân sách ads.</p>
+
+    <div class="grid2" style="gap:16px">
+      <div class="cal">
+        <div class="callab"><span class="name">♻️ Sobriety / AA</span><span class="verdict" style="background:var(--go-soft);color:var(--go)">Evergreen</span></div>
+        <div class="bars">
+          <div class="b" style="height:78%"></div><div class="b" style="height:60%"></div><div class="b" style="height:58%"></div>
+          <div class="b" style="height:57%"></div><div class="b" style="height:60%"></div><div class="b" style="height:58%"></div>
+          <div class="b" style="height:56%"></div><div class="b" style="height:57%"></div><div class="b" style="height:70%"></div>
+          <div class="b" style="height:60%"></div><div class="b" style="height:66%"></div><div class="b peak" style="height:82%"></div>
+        </div>
+        <div class="months"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span></div>
+        <p class="peaks"><b>Bán đều quanh năm</b> (kỷ niệm cai của mỗi người rơi bất kỳ tháng nào). Nhích nhẹ: <b>T1</b> (quyết tâm năm mới), <b>T9</b> (National Recovery Month), <b>T11–12</b> (quà lễ).</p>
+      </div>
+      <div class="cal">
+        <div class="callab"><span class="name">🎖️ Military / Patriotic</span><span class="verdict" style="background:var(--gold-soft);color:var(--gold)">Evergreen + spike lễ</span></div>
+        <div class="bars">
+          <div class="b" style="height:52%"></div><div class="b" style="height:52%"></div><div class="b" style="height:55%"></div>
+          <div class="b" style="height:58%"></div><div class="b peak" style="height:82%"></div><div class="b" style="height:74%"></div>
+          <div class="b peak" style="height:88%"></div><div class="b" style="height:56%"></div><div class="b" style="height:58%"></div>
+          <div class="b" style="height:60%"></div><div class="b peak" style="height:90%"></div><div class="b" style="height:78%"></div>
+        </div>
+        <div class="months"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span></div>
+        <p class="peaks">Đỉnh: <b>T5</b> (Memorial/Armed Forces Day), <b>T6</b> (Army b-day, Flag Day, tốt nghiệp, Father's Day), <b>T7</b> (4th July + <b>250th 2026</b>), <b>T11</b> (Veterans Day), <b>T12</b> (Giáng Sinh).</p>
+      </div>
+    </div>
+    <div class="note">🇺🇸 <b>Lớp phủ 250th (Semiquincentennial):</b> nhu cầu patriotic/coin kỷ niệm tăng mạnh suốt 2026, đỉnh quanh 4/7/2026 và còn kéo sang 2027. Muốn ăn sóng này: hàng phải về kho <b>Q1–Q2/2026</b>.</div>
+  </section>
+
+  <!-- ============ GTM ============ -->
+  <section>
+    <div class="head"><span class="no">04</span><h2>Đi hàng &amp; launching</h2></div>
+    <div class="grid3">
+      <div class="card"><span class="tag">Sản phẩm</span><h4>Coin cao cấp, không rẻ hóa</h4><p>Die-struck kim loại mạ bền, 1.75–2", 3mm; +hộp nhung/thẻ thông điệp. Đây là ngách quà — packaging quyết định giá bán &amp; review 5★.</p></div>
+      <div class="card"><span class="tag">Sourcing</span><h4>1688/Alibaba</h4><p>Phôi ~$0.5–2/coin, MOQ 100–500, phí khuôn 1 lần ~$50–150. Bắt buộc <b>test mẫu vật lý</b>: nét khắc, màu enamel, độ bền mạ.</p></div>
+      <div class="card"><span class="tag">Margin</span><h4>55–70% khả thi</h4><p>Coin nhẹ (&lt;1oz) → FBA small-standard, phí thấp. Giá bán $14–22, vốn $1–2 → biên tốt hơn nhiều đối thủ đang 31–58%.</p></div>
+      <div class="card"><span class="tag">SKU</span><h4>Phủ trục cảm xúc</h4><p>Sobriety = trục mốc năm; Military = trục quân chủng + nghi thức. Cân nhắc bản khắc tên (personalized) để né so-kè giá.</p></div>
+      <div class="card"><span class="tag">Review</span><h4>Rào cản thấp — bơm sớm</h4><p>Tân binh thắng với &lt;120 review. Dùng Vine + PPC mồi ngay khi mở listing để index từ khóa &amp; gom 15–30 review đầu.</p></div>
+      <div class="card"><span class="tag">Combo</span><h4>Coin + Holder</h4><p>Display/holder bán rất chạy ($27–35k/th). Bán kèm để bắt cả 2 nhóm search &amp; tăng AOV.</p></div>
+    </div>
+
+    <h3 style="margin:28px 0 12px;font-size:19px">Lịch triển khai (để ăn cả sóng 250th 2026)</h3>
+    <ul class="rail">
+      <li><div class="when">Ngay bây giờ · T7–8/2026</div><div class="what">Chốt ngách + 5–8 mẫu; kéo ASIN đối thủ, check Design Patent.</div><div class="why">Ưu tiên Sobriety (vào được ngay) + Military-patriotic/250th.</div></li>
+      <li><div class="when">T8–9/2026</div><div class="what">Đặt khuôn, sản xuất &amp; QC mẫu thử.</div><div class="why">Duyệt màu enamel, độ nét, mạ. Sai ở đây là sai cả lô.</div></li>
+      <li><div class="when">T9–10/2026</div><div class="what">Hàng vào kho FBA; mở listing; Vine + PPC mồi.</div><div class="why">Cần thời gian index keyword &amp; gom review trước cao điểm lễ.</div></li>
+      <li class="peak"><div class="when">T11–12 &amp; quanh 4/7/2027</div><div class="what">Đỉnh gifting lễ + dư âm 250th — dồn ngân sách ads.</div><div class="why">Canh tồn kho không đứt; sobriety bán đều cả năm nên tái đơn liên tục.</div></li>
+    </ul>
+    <p class="note"><b>Thứ tự đề xuất:</b> ① Sobriety/AA (cung thấp, PPC rẻ, LTV cao, IP dễ) → ② Military display stand (IP sạch, doanh thu lớn) → ③ Coin 250th/quân chủng (sóng + biên, nhưng audit IP trước).</p>
+  </section>
+
+  <a class="backlink" href="index.html">&larr; Về danh sách báo cáo</a>
+
+  <div class="foot">
+    Nguồn dữ liệu: <b>SellerSprite</b> (Keyword Mining + Product Research, Amazon US, 30-day, 07/2026). Số search/purchase/revenue là ước tính thuật toán để so sánh tương đối. ASIN &amp; thương hiệu nêu ra chỉ nhằm phân tích cạnh tranh. Mockup coin là phác thảo concept để brief thiết kế — không phải file production. Nội bộ UOYmedia — không chia sẻ ra ngoài tổ chức.
+  </div>
+
+</div>
+</body>
+</html>
