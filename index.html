@@ -11,15 +11,23 @@
   .wrap{max-width:760px;margin:0 auto}
   .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px}
   h1{font-family:Cambria,Georgia,serif;font-size:30px;margin:0 0 6px}
-  .sub{color:var(--muted);font-size:14px;margin:0 0 32px}
-  .list{display:grid;gap:14px}
+  .sub{color:var(--muted);font-size:14px;margin:0 0 28px}
+  .list{display:grid;gap:14px;min-height:80px}
   a.report{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;transition:border-color .15s,transform .15s}
   a.report:hover{border-color:var(--x);transform:translateY(-1px)}
-  .ico{font-size:30px;line-height:1;flex-shrink:0}
-  .meta h2{font-family:Cambria,Georgia,serif;font-size:18px;margin:0 0 3px}
-  .meta p{margin:0;font-size:13px;color:var(--muted)}
-  .arrow{margin-left:auto;color:var(--x);font-size:22px;font-weight:700}
-  .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--x);background:var(--x-soft);padding:2px 9px;border-radius:99px;margin-left:8px;vertical-align:2px}
+  .ico{font-size:30px;line-height:1;flex-shrink:0;width:34px;text-align:center}
+  .meta{min-width:0}
+  .meta h2{font-family:Cambria,Georgia,serif;font-size:18px;margin:0 0 3px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .meta p{margin:0;font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis}
+  .arrow{margin-left:auto;color:var(--x);font-size:22px;font-weight:700;flex-shrink:0}
+  .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--x);background:var(--x-soft);padding:2px 9px;border-radius:99px}
+  .date{font-size:11.5px;color:var(--muted);font-weight:400}
+  .state{padding:26px 4px;color:var(--muted);font-size:14px;text-align:center}
+  .spin{display:inline-block;width:16px;height:16px;border:2px solid var(--line);border-top-color:var(--x);border-radius:50%;animation:sp .8s linear infinite;vertical-align:-3px;margin-right:8px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  @media(prefers-reduced-motion:reduce){.spin{animation:none}}
+  .err{background:var(--x-soft);border:1px solid #E9C9AE;border-radius:10px;padding:14px 16px;font-size:13.5px;color:#7a3c07}
+  .err a{color:var(--x)}
   .foot{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
 </style>
 </head>
@@ -27,37 +35,84 @@
   <div class="wrap">
     <div class="eyebrow">UOYmedia · Amazon Market Research</div>
     <h1>AMZ Reverse — Báo cáo nghiên cứu</h1>
-    <p class="sub">Tổng hợp các báo cáo phân tích ASIN &amp; niche. Bấm vào từng báo cáo để xem chi tiết.</p>
+    <p class="sub">Tổng hợp các báo cáo phân tích ASIN &amp; niche. Danh sách tự cập nhật theo file trong repo — bấm vào từng báo cáo để xem chi tiết.</p>
 
-    <div class="list">
-      <a class="report" href="christian-blanket-ranking-journey.html">
-        <span class="ico">🧣</span>
-        <span class="meta">
-          <h2>Reverse ASIN — Christian Blanket (cấu trúc ranking) <span class="tag">Mới</span></h2>
-          <p>B0D8KGYBGB: kiến trúc keyword 3 tầng, hành trình launch 22 tháng &amp; timeline nếu vào cạnh tranh · 17/07/2026</p>
-        </span>
-        <span class="arrow">&rarr;</span>
-      </a>
-      <a class="report" href="challenge-coin-recovery-military.html">
-        <span class="ico">🪙</span>
-        <span class="meta">
-          <h2>Challenge Coin — Sobriety &amp; Military</h2>
-          <p>ASIN &amp; doanh thu đối thủ, keyword, ads &amp; tính mùa vụ theo tháng · 17/07/2026</p>
-        </span>
-        <span class="arrow">&rarr;</span>
-      </a>
-      <a class="report" href="highland-cow.html">
-        <span class="ico">🐄</span>
-        <span class="meta">
-          <h2>Crochet Highland Cow</h2>
-          <p>So sánh 4 ASIN, rank keyword, cường độ ads &amp; P&amp;L khi nhập cuộc · cập nhật 08/07/2026</p>
-        </span>
-        <span class="arrow">&rarr;</span>
-      </a>
-      <!-- Thêm báo cáo mới: copy khối <a class="report">...</a> ở trên, đổi href, icon, tiêu đề -->
+    <div class="list" id="list">
+      <div class="state"><span class="spin"></span>Đang tải danh sách báo cáo…</div>
     </div>
 
-    <div class="foot">Nguồn dữ liệu: SellerSprite · Nội bộ UOYmedia — không chia sẻ ra ngoài tổ chức.</div>
+    <div class="foot">Nguồn dữ liệu: SellerSprite · Nội bộ UOYmedia — không chia sẻ ra ngoài tổ chức.<br>Menu tự liệt kê mọi file <code>.html</code> trong repo; thêm báo cáo = chỉ cần upload file mới.</div>
   </div>
+
+<script>
+const OWNER="Paul13-Uoy", REPO="AMZ-Reverse", BRANCH="main";
+// Bỏ qua các file không phải báo cáo
+const SKIP=new Set(["index.html","404.html"]);
+
+// Chọn emoji theo từ khóa trong tên file/tiêu đề
+function iconFor(s){s=s.toLowerCase();
+  const map=[["cow","🐄"],["coin","🪙"],["blanket","🧣"],["crochet","🧶"],["cat","🐱"],["dog","🐶"],
+    ["seal","🦭"],["capybara","🦫"],["dragon","🐉"],["octopus","🐙"],["shark","🦈"],["dino","🦕"],
+    ["duck","🦆"],["frog","🐸"],["axolotl","🦎"],["goose","🪿"],["bear","🧸"],["christian","✝️"],
+    ["military","🎖️"],["ornament","🎄"],["candle","🕯️"],["mug","☕"],["shirt","👕"],["keychain","🔑"]];
+  for(const [k,e] of map){if(s.includes(k))return e;}
+  return "📊";
+}
+function cleanTitle(t){return (t||"").replace(/\s*[|｜]\s*SellerSprite.*$/i,"").replace(/\s*[|｜]\s*AMZ Reverse.*$/i,"").trim();}
+function prettyName(f){return f.replace(/\.html$/i,"").replace(/[-_]+/g," ").replace(/\b\w/g,c=>c.toUpperCase());}
+function fmtDate(d){if(!d)return"";const x=new Date(d);if(isNaN(x))return"";return String(x.getDate()).padStart(2,"0")+"/"+String(x.getMonth()+1).padStart(2,"0")+"/"+x.getFullYear();}
+
+async function load(){
+  const listEl=document.getElementById("list");
+  let files;
+  try{
+    const r=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents?ref=${BRANCH}`,{headers:{Accept:"application/vnd.github+json"}});
+    if(!r.ok) throw new Error("api "+r.status);
+    const data=await r.json();
+    files=data.filter(f=>f.type==="file" && /\.html$/i.test(f.name) && !SKIP.has(f.name.toLowerCase()));
+  }catch(e){
+    listEl.innerHTML=`<div class="err"><b>Chưa tải được danh sách tự động.</b><br>Có thể GitHub tạm giới hạn truy vấn (thử lại sau ít phút), hoặc mạng chặn. Bạn vẫn mở báo cáo trực tiếp trong <a href="https://github.com/${OWNER}/${REPO}" target="_blank" rel="noopener">repo AMZ-Reverse</a>.</div>`;
+    return;
+  }
+  if(!files.length){listEl.innerHTML=`<div class="state">Chưa có báo cáo nào. Upload file .html vào repo để nó hiện ở đây.</div>`;return;}
+
+  // Lấy tiêu đề (từ raw) + ngày commit gần nhất (từ commits API) của từng file
+  const reports=await Promise.all(files.map(async f=>{
+    let title=prettyName(f.name), desc="", ts=0;
+    try{
+      const raw=await fetch(f.download_url,{cache:"no-store"});
+      const html=await raw.text();
+      const doc=new DOMParser().parseFromString(html,"text/html");
+      title=cleanTitle(doc.querySelector("title")?.textContent)||title;
+      desc=(doc.querySelector('meta[name="description"]')?.content||"").trim();
+    }catch(e){}
+    try{
+      const c=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/commits?path=${encodeURIComponent(f.path||f.name)}&sha=${BRANCH}&per_page=1`,{headers:{Accept:"application/vnd.github+json"}});
+      if(c.ok){const arr=await c.json();const d=arr[0]?.commit?.committer?.date||arr[0]?.commit?.author?.date;if(d)ts=Date.parse(d);}
+    }catch(e){}
+    return {file:f.name, title, desc, ts};
+  }));
+
+  // Có ngày thì xếp mới nhất lên đầu; không thì xếp theo A→Z
+  if(reports.some(r=>r.ts>0)) reports.sort((a,b)=>b.ts-a.ts);
+  else reports.sort((a,b)=>a.title.localeCompare(b.title));
+  const newest=Math.max(0,...reports.map(r=>r.ts));
+
+  listEl.innerHTML=reports.map(rp=>{
+    const isNew=rp.ts===newest && newest>0;
+    const dt=fmtDate(rp.ts||null);
+    const sub=[rp.desc, dt?("cập nhật "+dt):""].filter(Boolean).join(" · ");
+    return `<a class="report" href="${rp.file}">
+      <span class="ico">${iconFor(rp.file+" "+rp.title)}</span>
+      <span class="meta">
+        <h2>${rp.title}${isNew?' <span class="tag">Mới</span>':''}</h2>
+        ${sub?`<p>${sub}</p>`:""}
+      </span>
+      <span class="arrow">&rarr;</span>
+    </a>`;
+  }).join("");
+}
+load();
+</script>
 </body>
 </html>
