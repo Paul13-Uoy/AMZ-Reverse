@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>POD Keepsake Cảm Xúc — Couples Fill-in Book &amp; Pet Memorial</title>
+<meta name="description" content="Đa dạng hoá Q1-2027 ngoài scented candle: 2 sản phẩm POD 'self-personalized' — sách fill-in couple &amp; pet memorial keepsake. Cầu, đối thủ, P&amp;L, mùa vụ, lane &amp; IP.">
+
+<style>
+  :root{
+    --ground:#FBFAF7;--card:#FFFFFF;--ink:#1F2530;--muted:#6B6E76;--line:#E4DFD4;
+    --navy:#16233B;--navy-soft:#E7EBF1;
+    --gold:#A9772B;--gold-soft:#F5EAD3;--gold-line:#E4CF9E;
+    --red:#B23A2E;--red-soft:#F5DFDB;
+    --go:#2E7D46;--go-soft:#E1F0E5;--wa:#A87E00;--wa-soft:#F7EED3;--bad:#B3382E;--bad-soft:#F5DDDA;
+    --mono:"Consolas","SF Mono",ui-monospace,"Roboto Mono",monospace;
+    --serif:Cambria,Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,sans-serif;margin:0;padding:0 20px 72px;line-height:1.58;font-size:16px}
+  .wrap{max-width:1000px;margin:0 auto}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;margin:0;text-wrap:balance}
+  p{margin:0}
+  a{color:var(--gold)}
+  .mono{font-family:var(--mono)}
+
+  .plate{background:var(--navy);border-radius:14px;margin:34px 0 10px;padding:34px 34px 30px;color:#EEF1F6;position:relative;overflow:hidden}
+  .plate::after{content:"";position:absolute;right:-40px;top:-40px;width:230px;height:230px;border-radius:50%;
+        background:radial-gradient(circle at 50% 50%,rgba(169,119,43,.32),transparent 68%);pointer-events:none}
+  .kick{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#C9A45A}
+  .plate h1{font-size:clamp(27px,4.4vw,42px);line-height:1.05;margin:9px 0 12px;color:#FCFAF5}
+  .plate h1 span{color:#D9AE5E}
+  .plate p{color:#B9C1CE;max-width:66ch;font-size:15px}
+  .badges{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+  .badges span{font-family:var(--mono);font-size:11px;letter-spacing:.05em;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:99px;padding:5px 12px;color:#DCE2EC}
+
+  .spec{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:14px 0 8px}
+  .spec div{background:var(--card);padding:15px 17px}
+  .spec dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .spec dd{margin:5px 0 0;font-family:var(--serif);font-size:23px;font-weight:600;color:var(--navy)}
+  .spec dd small{font-size:12px;color:var(--muted);font-weight:400;font-family:"Segoe UI",sans-serif}
+  @media(max-width:720px){.spec{grid-template-columns:repeat(2,1fr)}}
+
+  .src{font-size:12px;color:var(--muted);margin:12px 2px 0}
+
+  section{margin:44px 0 0}
+  .head{display:flex;align-items:baseline;gap:13px;border-bottom:2px solid var(--navy);padding-bottom:9px;margin-bottom:20px}
+  .head .no{font-family:var(--mono);font-size:13px;color:var(--gold);font-weight:700}
+  .head h2{font-size:25px}
+  .lead{max-width:78ch;color:#3A3E48;margin-bottom:18px}
+
+  .nichebar{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 22px}
+  .nichebar a{flex:1;min-width:240px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:10px;padding:14px 18px;transition:transform .12s,border-color .12s}
+  .nichebar a:hover{transform:translateY(-1px)}
+  .nichebar .n1{border-left-color:var(--red)}
+  .nichebar .n2{border-left-color:var(--go)}
+  .nichebar h3{font-size:18px;margin-bottom:3px}
+  .nichebar p{font-size:13px;color:var(--muted)}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:820px){.grid3{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.grid3,.grid2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:17px 18px}
+  .card .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:var(--gold-soft);border-radius:5px;padding:3px 9px;display:inline-block}
+  .card h4{font-size:17px;margin:11px 0 5px}
+  .card p{font-size:14px;color:#42464E}
+
+  .tw{overflow-x:auto;border:1px solid var(--line);border-radius:11px;margin:4px 0}
+  table{border-collapse:collapse;width:100%;min-width:660px;font-size:14px;background:var(--card)}
+  th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--navy);color:#EBEEF3;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:#FBFAF7}
+  td .mono{font-size:12.5px;color:var(--muted)}
+  .rev{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+  .pill{font-family:var(--mono);font-size:10.5px;padding:2px 7px;border-radius:99px;white-space:nowrap}
+  .pill.win{background:var(--go-soft);color:var(--go)}
+  .pill.new{background:var(--gold-soft);color:var(--gold)}
+  .pill.old{background:var(--navy-soft);color:var(--navy)}
+  .pill.acc{background:var(--red-soft);color:var(--red)}
+
+  .kws{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .kw{font-family:var(--mono);font-size:12.5px;background:var(--card);border:1px solid var(--line);border-radius:7px;padding:5px 10px}
+  .kw b{color:var(--navy)}
+  .kw.hot{border-color:var(--gold-line);background:var(--gold-soft)}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.split{grid-template-columns:1fr}}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:16px 18px}
+  .box h4{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .box ul{margin:0;padding-left:19px;font-size:14px;color:#3E424B}
+  .box li{margin:5px 0}
+  .box.warn{background:var(--red-soft);border-color:#E7C4BE}
+  .box.warn h4{color:var(--red)}
+  .box.good{background:var(--go-soft);border-color:#BFDDC8}
+  .box.good h4{color:var(--go)}
+
+  .cal{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 18px 12px}
+  .callab{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:6px}
+  .callab .name{font-family:var(--serif);font-weight:600;font-size:16px}
+  .callab .verdict{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:99px}
+  .bars{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;align-items:end;height:120px;margin:12px 0 4px}
+  .bars .b{background:linear-gradient(180deg,var(--gold),#CBA45C);border-radius:4px 4px 0 0;position:relative}
+  .bars .b.peak{background:linear-gradient(180deg,var(--red),#C9564A)}
+  .months{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;font-family:var(--mono);font-size:10px;color:var(--muted);text-align:center}
+  .cal .peaks{margin-top:10px;font-size:13px;color:#42464E}
+  .cal .peaks b{color:var(--navy)}
+
+  .rail{list-style:none;margin:0;padding:0;border-left:3px solid var(--gold-line)}
+  .rail li{position:relative;padding:0 0 18px 24px}
+  .rail li::before{content:"";position:absolute;left:-9px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--card);border:3px solid var(--gold)}
+  .rail li.peak::before{background:var(--red);border-color:var(--red)}
+  .rail .when{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+  .rail .what{font-weight:600;font-family:var(--serif)}
+  .rail .why{color:var(--muted);font-size:14px}
+
+  .note{background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:9px;padding:13px 17px;font-size:14px;color:#5E4410;margin-top:16px}
+  .foot{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- MASTHEAD -->
+  <div class="plate">
+    <div class="kick">UOYmedia · Amazon R&amp;D · Diversification Q1-2027</div>
+    <h1>POD Keepsake Cảm Xúc — <span>Couples Fill-in Book</span> &amp; <span>Pet Memorial</span></h1>
+    <p>Giảm phụ thuộc scented candle cho Q1-2027 bằng 2 sản phẩm <b>"self-personalized"</b>: một base, vô số thiết kế, phủ nhiều dịp &amp; niche. Nghiên cứu văn hoá tiêu dùng Mỹ → cầu &amp; đối thủ trên Amazon → P&amp;L, mùa vụ, lane &amp; rủi ro IP.</p>
+    <div class="badges">
+      <span>🇺🇸 Amazon US</span><span>Etsy discovery: YTrends</span><span>Amazon validation: SellerSprite (30-day)</span><span>07/2026</span>
+    </div>
+  </div>
+
+  <dl class="spec">
+    <div><dt>Cầu cụm #1 (book)</dt><dd>~30k <small>search/th</small></dd></div>
+    <div><dt>Cầu cụm #2 (pet)</dt><dd>~32k <small>search/th</small></dd></div>
+    <div><dt>Đối thủ #1 / #2</dt><dd>78 / 4.6k <small>phrase match</small></dd></div>
+    <div><dt>Return quà cá nhân hoá</dt><dd>−48% <small>vs quà generic</small></dd></div>
+  </dl>
+  <p class="src">⚠️ Số search / units / revenue / review là <b>ước tính của SellerSprite</b> (hành vi tìm kiếm &amp; BSR của Amazon) — dùng so sánh tương đối, không phải doanh thu thực niêm yết. Các con số P&amp;L (phí FBA, COGS, ads) và hình dạng mùa vụ là <b>GIẢ ĐỊNH / định tính</b> — đã gắn nhãn rõ trong từng mục.</p>
+
+  <!-- 00 EXEC -->
+  <section>
+    <div class="head"><span class="no">00</span><h2>Chốt nhanh</h2></div>
+    <div class="nichebar">
+      <a class="n1" href="#book">
+        <h3>💌 Couples Fill-in Book — beachhead Valentine</h3>
+        <p>Cạnh tranh CỰC thấp (78 SP). Leader mới 7 tháng đã #1 với 385 review. Vào nhanh, rẻ, đúng lõi Valentine Q1.</p>
+      </a>
+      <a class="n2" href="#pet">
+        <h3>🐾 Pet Memorial — trụ evergreen margin cao</h3>
+        <p>Cầu ~32k, độc lập Valentine (grief-driven). Đông (4.6k) nhưng winner trẻ &amp; review vừa → chen được bằng khác biệt hoá.</p>
+      </a>
+    </div>
+    <p class="lead">Cả hai chung một DNA: <b>"self-personalized sentiment"</b> — SKU stock sẵn, khách <i>tự</i> điền nội dung / thêm tên–ngày–ảnh. Nhờ đó cho trọn cảm giác cá nhân hoá (mà người Mỹ trả giá cao &amp; ít trả hàng) <b>nhưng không cần vận hành custom từng đơn</b> — hợp FBA. Moat nằm ở <b>thiết kế &amp; thông điệp</b>, nên "biến tấu" được sang nhiều niche mà không đổi chuỗi sản xuất. Khuyến nghị: <b>làm cả hai, tuần tự</b> — book làm beachhead Valentine, pet memorial làm trụ evergreen.</p>
+  </section>
+
+  <!-- 01 CULTURE -->
+  <section id="culture">
+    <div class="head"><span class="no">01</span><h2>Bối cảnh văn hoá tiêu dùng Mỹ</h2></div>
+    <dl class="spec">
+      <div><dt>Valentine 2026 (US)</dt><dd>$27.5B <small>chi tiêu kỷ lục</small></dd></div>
+      <div><dt>TB / người</dt><dd>$185 <small>/dịp</small></dd></div>
+      <div><dt>"Ý nghĩa hơn generic"</dt><dd>76% <small>người tiêu dùng</small></dd></div>
+      <div><dt>Trả thêm cho custom</dt><dd>1/5 <small>+20% giá</small></dd></div>
+    </dl>
+    <p class="lead" style="margin-top:18px">Gifting Mỹ đang dồn về <b>personalization &amp; keepsake tạo ký ức</b>: 76% thấy quà cá nhân hoá ý nghĩa hơn, 1/5 trả thêm 20%, và quà cá nhân hoá <b>hoàn trả thấp hơn 48%</b> — lợi thế lớn cho FBA. Đây là nền cho cả 2 sản phẩm.</p>
+
+    <div class="box warn" style="margin-top:6px">
+      <h4>🔑 Nghịch lý personalization — và cách khai thác</h4>
+      <ul>
+        <li>Trên Amazon, <b>từ khoá "personalized candle" gần như 0 cầu</b> dù personalization đang thống trị. Vì (a) người mua <b>không search chữ "personalized"</b> — họ search <i>quan hệ + dịp + sản phẩm</i>; (b) custom 1-1 (khắc tên theo đơn) <b>rất khó vận hành FBA</b>.</li>
+        <li>→ Sản phẩm thắng là loại <b>"self-personalized"</b>: SKU tiêu chuẩn, khách tự điền/tự thêm nội dung. Trọn payoff cảm xúc, không cần custom ops. Cả sách fill-in lẫn keepsake "add-your-photo" đều thuộc nhóm này.</li>
+      </ul>
+    </div>
+    <p class="note"><b>Phương pháp 2 sàn:</b> YTrends (Etsy) để phát hiện trend văn hoá sớm; SellerSprite (Amazon) để thẩm định cầu thật. Bài học: nhiều theme mạnh trên Etsy (personalization, framing "forever/everlasting flowers") <b>không dịch sang search Amazon</b> — nên mọi ứng viên đều phải đo lại trên Amazon trước khi chốt.</p>
+  </section>
+
+  <!-- 02 PRODUCT 1 -->
+  <section id="book">
+    <div class="head"><span class="no">02</span><h2>💌 Sản phẩm #1 — Couples Fill-in Keepsake Book</h2></div>
+    <p class="lead">Sách có sẵn câu gợi ý để người tặng <b>tự viết</b> ("What I Love About You", "Reasons Why I Love You"). Lõi Valentine + anniversary, nền quanh năm. Kinh tế FBA đẹp nhất: nhẹ, in rẻ, margin gộp cao, hoàn trả thấp; khởi động được qua KDP rồi lên private-label bìa da/vải.</p>
+
+    <dl class="spec">
+      <div><dt>"what i love about you book"</dt><dd>13,078 <small>search/th (SPS)</small></dd></div>
+      <div><dt>"our adventure book" cụm</dt><dd>~17k <small>+scrapbook/album</small></dd></div>
+      <div><dt>Đối thủ (phrase)</dt><dd>78 <small>blue-ocean</small></dd></div>
+      <div><dt>Rào cản review</dt><dd>Thấp <small>leader 385 rv, 7 tháng</small></dd></div>
+    </dl>
+
+    <h3 style="margin:26px 0 10px;font-size:19px">Đối thủ &amp; doanh thu — phrase "what i love about you book"</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Sản phẩm (Brand)</th><th>ASIN</th><th>Giá</th><th>Doanh thu/th</th><th>Units/th</th><th>Review / ★</th><th>Ra mắt</th><th></th></tr></thead>
+        <tbody>
+          <tr><td><b>What I Love About You Book</b> (WITTSPOT)<br><span class="mono">#1,614 Office Products · Best Seller + Amazon's Choice</span></td><td class="mono">B0G5B4L1JR</td><td>$12.95</td><td class="rev">$45,973</td><td>3,550</td><td>385 · 4.8</td><td>12/2025</td><td><span class="pill win">Dẫn đầu</span></td></tr>
+          <tr><td>What I Love About You Leather Book – 30 Reasons (YOELOVE)<br><span class="mono">#12,678 Office Products</span></td><td class="mono">B0GG4FSVTW</td><td>~$26</td><td class="rev">—</td><td>443</td><td>— · 4.8</td><td>2025</td><td><span class="pill new">Premium</span></td></tr>
+          <tr><td>Artmag "Reasons Why I Love You" Fabric Book<br><span class="mono">#17,020 Office Products · vải bọc</span></td><td class="mono">B0FNDNQQ6C</td><td>—</td><td class="rev">—</td><td>349</td><td>— · —</td><td>2025</td><td><span class="pill new">Premium</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><b>Đọc bảng:</b> chỉ 78 đối thủ; leader WITTSPOT <b>ra mắt 12/2025 đã chiếm #1 Best Seller với chỉ 385 review</b> → cửa vào còn rất rộng. Mô hình giá 2 tầng: bản fill-in cứng ~$12.95 (volume lớn) và bản bìa da/vải premium ~$26 (margin cao, đơn vị bán thấp hơn).</p>
+
+    <div class="box warn" style="margin-top:16px">
+      <h4>⚠️ Chọn đúng "lane" — NÉ "Our Adventure Book"</h4>
+      <ul>
+        <li>Cụm <b>"Our Adventure Book"</b> (scrapbook) tuy cầu tốt nhưng bị incumbent review-khủng khoá: JIMBON <b>2.539 rv</b> ($63k/th), FEIYU BUY <b>1.897 rv</b> ($110k/th), AMAOGE <b>10.099 rv</b> — đều ra 2019–2021. Vào sau rất khó.</li>
+        <li><b>Rủi ro IP:</b> "Our Adventure Book" là hình ảnh phim <i>Up</i> (Disney/Pixar) → clone dễ dính bản quyền. Chỉ dùng ý tưởng "memory/adventure" ở thiết kế gốc của mình, KHÔNG sao chép.</li>
+        <li>→ Vào bằng lane <b>generic fill-in ("What I Love About You / Reasons")</b>: barrier thấp, winner còn tươi.</li>
+      </ul>
+    </div>
+
+    <h3 style="margin:30px 0 12px;font-size:19px">Mùa vụ (định tính — chưa phải curve export SPS)</h3>
+    <div class="cal">
+      <div class="callab"><span class="name">Couples fill-in book — cầu theo tháng</span><span class="verdict" style="background:var(--red-soft);color:var(--red)">2 đỉnh: Feb + Dec</span></div>
+      <div class="bars">
+        <div class="b" style="height:52%"></div>
+        <div class="b peak" style="height:100%"></div>
+        <div class="b" style="height:44%"></div>
+        <div class="b" style="height:40%"></div>
+        <div class="b" style="height:52%"></div>
+        <div class="b" style="height:38%"></div>
+        <div class="b" style="height:34%"></div>
+        <div class="b" style="height:34%"></div>
+        <div class="b" style="height:40%"></div>
+        <div class="b" style="height:48%"></div>
+        <div class="b" style="height:64%"></div>
+        <div class="b peak" style="height:90%"></div>
+      </div>
+      <div class="months"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span></div>
+      <div class="peaks"><b>Đỉnh Valentine (T2)</b> + phụ đỉnh Christmas (T12); nền anniversary quanh năm. <i>Cơ sở: leader ra 12/2025 rồi bùng lên 3.550 u/th đầu 2026 + logic gifting ngành. Curve chính xác cần Export Historical Sales của SPS.</i></div>
+    </div>
+
+    <div class="box good" style="margin-top:16px">
+      <h4>💵 P&amp;L nhập cuộc / đơn (GIẢ ĐỊNH — trừ gross margin gộp là SPS 57%)</h4>
+      <ul>
+        <li>Giá $12.95 · Referral 15% ≈ $1.94 · Phí FBA (6.7oz, standard) ≈ $3.50 · COGS in ≈ $2.50 · Ads ≈ $2.50</li>
+        <li>→ <b>Net ≈ $2.5/đơn (~19%)</b> — $/đơn thấp, thắng bằng <b>volume</b> (leader 3.550 u/th) + bậc premium $26 để nâng AOV.</li>
+      </ul>
+    </div>
+    <div class="kws">
+      <span class="kw hot"><b>what i love about you book</b> · 13,078</span>
+      <span class="kw hot"><b>our adventure book</b> · 9,933</span>
+      <span class="kw">our adventure book scrapbook · 5,936</span>
+      <span class="kw">reasons why i love you book</span>
+      <span class="kw">biến tấu: husband/wife/bf/gf/anniversary/wedding</span>
+    </div>
+  </section>
+
+  <!-- 03 PRODUCT 2 -->
+  <section id="pet">
+    <div class="head"><span class="no">03</span><h2>🐾 Sản phẩm #2 — Pet Memorial Keepsake</h2></div>
+    <p class="lead">Kỷ vật tưởng niệm thú cưng "self-personalized" (khắc tên–ngày, thêm ảnh): wind chime, memorial stone/sign, khung ảnh. Văn hoá pet-parent Mỹ cực mạnh, cảm xúc grief → giá trị cảm nhận cao, ít nhạy giá, <b>evergreen &amp; độc lập Valentine</b> — trụ giảm rủi ro mùa vụ tốt nhất.</p>
+
+    <dl class="spec">
+      <div><dt>"pet memorial gifts for dogs"</dt><dd>24,734 <small>search/th (SPS)</small></dd></div>
+      <div><dt>Cụm (dog+cat+chung)</dt><dd>~32k <small>search/th</small></dd></div>
+      <div><dt>Đối thủ (phrase)</dt><dd>4,629 <small>đông, trưởng thành</small></dd></div>
+      <div><dt>Margin gộp top (SPS)</dt><dd>63–67% <small>$/đơn cao</small></dd></div>
+    </dl>
+
+    <h3 style="margin:26px 0 10px;font-size:19px">Đối thủ &amp; doanh thu — phrase "pet memorial gifts for dogs"</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Sản phẩm (Brand)</th><th>ASIN</th><th>Giá</th><th>Doanh thu/th</th><th>Units/th</th><th>Review / ★</th><th>Ra mắt</th><th></th></tr></thead>
+        <tbody>
+          <tr><td><b>DIY Dog Memorial Wind Chime</b> (CClaga)<br><span class="mono">#10 Dog Memorials &amp; Funerary · self-personalized</span></td><td class="mono">B0DH8H6YRV</td><td>$18.99</td><td class="rev">$28,162</td><td>1,483</td><td>369 · 4.8</td><td>10/2024</td><td><span class="pill old">Incumbent</span></td></tr>
+          <tr><td><b>Dog Memorial Gifts</b> (AMETHUARTZ)<br><span class="mono">Best Seller · winner trẻ</span></td><td class="mono">B0FBXN33Z2</td><td>$22.99</td><td class="rev">$30,968</td><td>1,347</td><td>199 · 4.8</td><td>08/2025</td><td><span class="pill win">Tân binh thắng</span></td></tr>
+          <tr><td>Memorial Wind Chime (SteadStyle)<br><span class="mono">#23 Wind Chimes (Patio/Garden)</span></td><td class="mono">—</td><td>—</td><td class="rev">—</td><td>—</td><td>— · —</td><td>—</td><td><span class="pill acc">Cross-cat</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><b>Đọc bảng:</b> niche đông (4.629 SP) nhưng <b>top winner review chỉ 199–369 và mới ra 2024–2025</b> — KHÔNG bị incumbent 10k-review khoá như "adventure book". Tân binh AMETHUARTZ ra 8/2025 đã Best Seller với 199 review → <b>chen được bằng khác biệt hoá + self-personalized</b> (khắc tên/ngày/ảnh). Giá $19–23, margin gộp 63–67% → $/đơn tốt hơn hẳn sách.</p>
+
+    <h3 style="margin:30px 0 12px;font-size:19px">Mùa vụ (định tính — sparkline top-seller SPS)</h3>
+    <div class="cal">
+      <div class="callab"><span class="name">Pet memorial — cầu theo tháng</span><span class="verdict" style="background:var(--go-soft);color:var(--go)">Evergreen (phẳng)</span></div>
+      <div class="bars">
+        <div class="b" style="height:62%"></div>
+        <div class="b" style="height:60%"></div>
+        <div class="b" style="height:64%"></div>
+        <div class="b" style="height:63%"></div>
+        <div class="b" style="height:66%"></div>
+        <div class="b" style="height:63%"></div>
+        <div class="b" style="height:64%"></div>
+        <div class="b" style="height:65%"></div>
+        <div class="b" style="height:64%"></div>
+        <div class="b" style="height:67%"></div>
+        <div class="b" style="height:70%"></div>
+        <div class="b peak" style="height:76%"></div>
+      </div>
+      <div class="months"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span></div>
+      <div class="peaks"><b>Phẳng quanh năm</b> (grief-driven, không theo dịp), nhích nhẹ dịp lễ cuối năm. <i>Cơ sở: sparkline "Sales Trend" của cả 3 top-seller đều rising/phẳng, không có đỉnh nhọn.</i></div>
+    </div>
+
+    <div class="box good" style="margin-top:16px">
+      <h4>💵 P&amp;L nhập cuộc / đơn (GIẢ ĐỊNH — trừ gross margin gộp là SPS 63–67%)</h4>
+      <ul>
+        <li>Giá ~$21 · Referral 15% ≈ $3.15 · Phí FBA (nhẹ, standard) ≈ $4.00 · COGS (wind chime kim loại) ≈ $5.00 · Ads ≈ $3.50</li>
+        <li>→ <b>Net ≈ $5/đơn (~25%)</b> — $/đơn &amp; margin cao hơn book; bù lại phải khác biệt hoá để chen 4.6k đối thủ.</li>
+      </ul>
+    </div>
+    <div class="kws">
+      <span class="kw hot"><b>pet memorial gifts for dogs</b> · 24,734</span>
+      <span class="kw">pet memorial gifts · 4,974</span>
+      <span class="kw">pet memorial gifts for cats · 2,455</span>
+      <span class="kw">biến tấu: dog/cat/breed · khắc tên–ngày · "in loving memory"</span>
+    </div>
+  </section>
+
+  <!-- 04 DECISION -->
+  <section id="decision">
+    <div class="head"><span class="no">04</span><h2>Bảng quyết định &amp; khuyến nghị</h2></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Tiêu chí</th><th>#1 Couples fill-in book</th><th>#2 Pet memorial keepsake</th></tr></thead>
+        <tbody>
+          <tr><td>Cầu (SPS, search/th)</td><td>~30k (cụm)</td><td>~32k (cụm)</td></tr>
+          <tr><td>Đối thủ (phrase)</td><td><b>78 — blue-ocean</b></td><td>4.629 — đông</td></tr>
+          <tr><td>Rào cản review</td><td><b>Rất thấp</b> (leader 385)</td><td>Vừa (top 199–369)</td></tr>
+          <tr><td>Giá / margin gộp</td><td>$12.95 / ~57%</td><td>$19–23 / <b>63–67%</b></td></tr>
+          <tr><td>Net/đơn (giả định)</td><td>~$2.5 (~19%)</td><td><b>~$5 (~25%)</b></td></tr>
+          <tr><td>Mùa vụ</td><td>Đỉnh Valentine + nền quanh năm</td><td><b>Evergreen, độc lập Valentine</b></td></tr>
+          <tr><td>Vai trò danh mục</td><td><span class="pill acc">Beachhead Valentine Q1</span></td><td><span class="pill win">Trụ evergreen margin</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lead" style="margin-top:18px"><b>Khuyến nghị: làm cả hai, tuần tự.</b> (1) <b>Couples fill-in book</b> làm <b>beachhead</b> — cạnh tranh thấp nhất, rào cản thấp nhất, vốn/rủi ro thấp nhất, kịp Valentine Q1-2027; vào lane generic (NÉ "Our Adventure Book"/Up). (2) <b>Pet memorial keepsake</b> làm <b>trụ evergreen margin cao</b> — độc lập Valentine, $/đơn tốt hơn, thắng bằng khác biệt hoá + self-personalized. Kết quả: doanh thu trải trên <b>2 chu kỳ mùa vụ khác nhau</b> thay vì dồn vào đỉnh nến Valentine.</p>
+  </section>
+
+  <!-- 05 GTM -->
+  <section id="gtm">
+    <div class="head"><span class="no">05</span><h2>Lộ trình &amp; rủi ro</h2></div>
+    <div class="split">
+      <div>
+        <ul class="rail">
+          <li><div class="when">T7–T8 2026 · Now</div><div class="what">Chốt concept + IP screening</div><div class="why">Brief designer bản gốc (KHÔNG clone Up). Chạy Design Patent / Check Patent (SPS) cho mẫu wind chime pet memorial.</div></li>
+          <li><div class="when">T8–T9 2026</div><div class="what">Sourcing &amp; sampling</div><div class="why">Nhà in bìa cứng/da (book); NCC wind chime/stone khắc (pet). Duyệt mẫu, test chất lượng in &amp; khắc.</div></li>
+          <li><div class="when">T10 2026</div><div class="what">Đặt hàng (song song sprint nến Q4)</div><div class="why">PO tồn kho: book cho mùa Valentine; pet memorial cho nền evergreen. Không đụng nguồn lực nến Q4.</div></li>
+          <li><div class="when">T11–T12 2026</div><div class="what">FBA inbound + listing</div><div class="why">A+ content, ảnh, video; gom review sớm (vinh danh, insert card). Book lên kệ trước Valentine.</div></li>
+          <li class="peak"><div class="when">T1–T2 2027 · Peak</div><div class="what">Valentine push (book) + pet steady</div><div class="why">Dồn ads cho couples book vào đỉnh Valentine; pet memorial chạy ads đều evergreen.</div></li>
+        </ul>
+      </div>
+      <div>
+        <div class="box warn">
+          <h4>⚠️ Rủi ro cần chặn</h4>
+          <ul>
+            <li><b>IP:</b> né "Our Adventure Book"/Up (Disney); rà design patent wind chime pet memorial trước khi chốt khuôn.</li>
+            <li><b>Book:</b> nội dung/prompt phải nguyên bản; tránh sao chép Knock Knock &amp; bản quyền layout.</li>
+            <li><b>#2 đông đối thủ:</b> bắt buộc khác biệt hoá (chất liệu, cơ chế khắc, bộ quà) — không đánh bằng giá.</li>
+            <li><b>$/đơn book thấp:</b> phải đạt volume + đẩy bậc premium $26 để P&amp;L khỏe.</li>
+          </ul>
+        </div>
+        <div class="box good" style="margin-top:14px">
+          <h4>✅ Vì sao bộ đôi này hợp brief</h4>
+          <ul>
+            <li>Moat = thiết kế/thông điệp → "biến tấu" nhiều niche cùng một base.</li>
+            <li>Self-personalized → cảm giác cá nhân hoá mà không cần custom ops FBA.</li>
+            <li>Nhẹ, margin khá, hoàn trả thấp (−48%).</li>
+            <li>2 chu kỳ mùa vụ khác nhau → giảm phụ thuộc đỉnh nến Valentine.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="note"><b>Việc còn treo:</b> đường cong Historical Sales 12 tháng chính xác lấy qua chức năng <i>Export</i> của SellerSprite (tải file, tối đa 100 ASIN) — chưa kéo trong phiên này do SPS render treo; nên lấy bổ sung ở phiên ổn định để xác nhận chính xác đỉnh Feb (book) &amp; độ phẳng (pet).</p>
+  </section>
+
+  <div class="foot">
+    UOYmedia · Amazon R&amp;D — Diversification Q1-2027. Nguồn cầu/đối thủ: SellerSprite (Amazon US, 30-day, 07/2026, ước tính). Discovery: YTrends (Etsy). Bối cảnh văn hoá: tổng hợp báo cáo gifting Valentine 2026 (Statista/eRank/Shutterfly/Snapfigures). Số P&amp;L &amp; hình mùa vụ là giả định/định tính, đã gắn nhãn. Nội bộ — kiểm chứng lại trước khi ra quyết định đầu tư.
+  </div>
+
+</div>
+</body>
+</html>
