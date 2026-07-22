@@ -34,7 +34,7 @@
 <body>
   <div class="wrap">
     <div class="eyebrow">UOYmedia · Amazon Market Research</div>
-    <h1>AMZ Reverse — Báo cáo nghiên cứu</h1>
+    <h1 id="pageTitle">Báo cáo nghiên cứu</h1>
     <p class="sub">Tổng hợp các báo cáo phân tích ASIN &amp; niche. Danh sách tự cập nhật theo file trong repo — bấm vào từng báo cáo để xem chi tiết.</p>
 
     <div class="list" id="list">
@@ -45,7 +45,16 @@
   </div>
 
 <script>
-const OWNER="Paul13-Uoy", REPO="AMZ-Reverse", BRANCH="main";
+// Tự nhận owner/repo từ URL — nhờ vậy CÙNG file index.html này chạy được ở MỌI repo, không cần sửa.
+// URL Pages có dạng https://<owner>.github.io/<repo>/...
+const _host=location.hostname, _seg=location.pathname.split("/").filter(Boolean);
+const OWNER=_host.endsWith(".github.io")?_host.replace(".github.io",""):"Paul13-Uoy";
+const REPO=_seg.length?_seg[0]:"AMZ-Reverse";
+const BRANCH="main";
+// Tiêu đề trang tự đặt theo tên repo (repo mới khỏi sửa)
+const _pretty=REPO.replace(/[-_]+/g," ").trim();
+document.getElementById("pageTitle").textContent=_pretty+" — Báo cáo nghiên cứu";
+document.title=_pretty+" — Market Research Reports";
 // Bỏ qua các file không phải báo cáo
 const SKIP=new Set(["index.html","404.html"]);
 
